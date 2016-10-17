@@ -13,7 +13,7 @@ export default class Layout extends React.Component {
 				<div className="app-content">{this.props.children}</div>
 				<footer>
 					<p>
-						This is the footer
+						Ts is the jhbjjjj
 					</p>
 				</footer>
 			</div>

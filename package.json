@@ -4,7 +4,12 @@
   "description": "A universal React app",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon src/WDserver.js --exec babel-node",
+    "start2": "babel-node src/server.js",
+    "build": "babel src -d dist",
+    "serve": "node dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "dev-webpack": "webpack",
     "production": "NODE_ENV=production node_modules/.bin/webpack -p"
   },
   "author": "",
@@ -23,6 +28,10 @@
   "devDependencies": {
     "babel-loader": "^6.2.5",
     "http-server": "^0.9.0",
-    "webpack": "^1.13.2"
+    "nodemon": "^1.11.0",
+    "react-hot-loader": "^3.0.0-beta.6",
+    "webpack": "^1.13.2",
+    "webpack-dev-middleware": "^1.8.4",
+    "webpack-hot-middleware": "^2.13.0"
   }
 }

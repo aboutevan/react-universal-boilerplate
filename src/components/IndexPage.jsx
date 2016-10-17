@@ -7,6 +7,7 @@ export default class IndexPage extends React.Component {
     return (
       <div className="home">
         <div className="athletes-selector">
+        	<h1>helldo</h1>
           {athletes.map(athleteData => <AthletePreview key={athleteData.id} {...athleteData} />)}
         </div>
       </div>

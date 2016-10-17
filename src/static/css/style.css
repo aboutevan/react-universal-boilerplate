@@ -9,7 +9,7 @@ input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-
 svg{display:inline-flex}img{max-width:100%;display:block}
 
 html {
-  color: #030303;
+  color: blue;
   font: caption;
   padding-bottom: 2em;
 }
