@@ -50,4 +50,18 @@ var athletes = [{
   'medals': [{ 'year': '2007', 'type': 'G', 'city': 'Belgrade', 'event': 'European Championships', 'category': '+100kg' }, { 'year': '2007', 'type': 'G', 'city': 'Rio de Janeiro', 'event': 'World Championships', 'category': '+100kg' }, { 'year': '2008', 'type': 'B', 'city': 'Beijing', 'event': 'Olympic Games', 'category': '+100kg' }, { 'year': '2008', 'type': 'G', 'city': 'Levallois-Perret', 'event': 'World Openweight Championships', 'category': 'Open' }, { 'year': '2009', 'type': 'G', 'city': 'Pescara', 'event': 'Mediterranean Games', 'category': '+100kg' }, { 'year': '2009', 'type': 'G', 'city': 'Rotterdam', 'event': 'World Championships', 'category': '+100kg' }, { 'year': '2010', 'type': 'G', 'city': 'Tokyo', 'event': 'World Championships', 'category': '+100kg' }, { 'year': '2010', 'type': 'S', 'city': 'Tokyo', 'event': 'World Championships', 'category': 'Open' }, { 'year': '2011', 'type': 'G', 'city': 'Istanbul', 'event': 'European Championships', 'category': '+100kg' }, { 'year': '2011', 'type': 'G', 'city': 'Paris', 'event': 'World Championships', 'category': '+100kg' }, { 'year': '2012', 'type': 'G', 'city': 'London', 'event': 'Olympic Games', 'category': '+100kg' }, { 'year': '2013', 'type': 'G', 'city': 'Budapest', 'event': 'European Championships', 'category': '+100kg' }, { 'year': '2013', 'type': 'G', 'city': 'Rio de Janeiro', 'event': 'World Championships', 'category': '+100kg' }, { 'year': '2014', 'type': 'G', 'city': 'Chelyabinsk', 'event': 'World Championships', 'category': '+100kg' }, { 'year': '2014', 'type': 'G', 'city': 'Montpellier', 'event': 'European Championships', 'category': '+100kg' }, { 'year': '2015', 'type': 'G', 'city': 'Astana', 'event': 'World Championships', 'category': '+100kg' }, { 'year': '2016', 'type': 'G', 'city': 'Kazan', 'event': 'European Championships', 'category': '+100kg' }, { 'year': '2016', 'type': 'G', 'city': 'Rio de Janeiro', 'event': 'Olympic Games', 'category': '+100kg' }]
 }];
 
-exports.default = athletes;
+var _default = athletes;
+exports.default = _default;
+;
+
+var _temp = function () {
+  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+    return;
+  }
+
+  __REACT_HOT_LOADER__.register(athletes, 'athletes', 'src/data/athletes.js');
+
+  __REACT_HOT_LOADER__.register(_default, 'default', 'src/data/athletes.js');
+}();
+
+;

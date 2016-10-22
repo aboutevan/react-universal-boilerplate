@@ -5,6 +5,7 @@ import AthletesMenu from './AthletesMenu';
 import Medal from './Medal';
 import Flag from './Flag';
 import athletes from '../data/athletes';
+import Sample from './Sample/Sample'
 
 export default class AthletePage extends React.Component {
   render() {
@@ -24,6 +25,7 @@ export default class AthletePage extends React.Component {
             <h2 className="name">{athlete.name}</h2>
           </div>
           <section className="description">
+          	<Sample/>
             Olympic medalist from <strong><Flag code={athlete.country} showName="true"/></strong>,
             born in {athlete.birth} (Find out more on <a href={athlete.link} target="_blank">Wikipedia</a>).
           </section>

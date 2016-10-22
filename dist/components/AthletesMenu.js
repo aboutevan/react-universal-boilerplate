@@ -53,4 +53,18 @@ var AthletesMenu = function (_React$Component) {
 	return AthletesMenu;
 }(_react2.default.Component);
 
-exports.default = AthletesMenu;
+var _default = AthletesMenu;
+exports.default = _default;
+;
+
+var _temp = function () {
+	if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+		return;
+	}
+
+	__REACT_HOT_LOADER__.register(AthletesMenu, 'AthletesMenu', 'src/components/AthletesMenu.js');
+
+	__REACT_HOT_LOADER__.register(_default, 'default', 'src/components/AthletesMenu.js');
+}();
+
+;

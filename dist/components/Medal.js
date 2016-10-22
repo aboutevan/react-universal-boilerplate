@@ -73,4 +73,20 @@ var Medal = function (_React$Component) {
 	return Medal;
 }(_react2.default.Component);
 
-exports.default = Medal;
+var _default = Medal;
+exports.default = _default;
+;
+
+var _temp = function () {
+	if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+		return;
+	}
+
+	__REACT_HOT_LOADER__.register(typeMap, 'typeMap', 'src/components/Medal.js');
+
+	__REACT_HOT_LOADER__.register(Medal, 'Medal', 'src/components/Medal.js');
+
+	__REACT_HOT_LOADER__.register(_default, 'default', 'src/components/Medal.js');
+}();
+
+;

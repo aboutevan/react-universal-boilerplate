@@ -10,8 +10,6 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouter = require('react-router');
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -20,52 +18,38 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Layout = function (_React$Component) {
-	_inherits(Layout, _React$Component);
+if (process.env.BROWSER) {
+	require('./Sample.css');
+}
 
-	function Layout() {
-		_classCallCheck(this, Layout);
+var Sample = function (_React$Component) {
+	_inherits(Sample, _React$Component);
 
-		return _possibleConstructorReturn(this, (Layout.__proto__ || Object.getPrototypeOf(Layout)).apply(this, arguments));
+	function Sample() {
+		_classCallCheck(this, Sample);
+
+		return _possibleConstructorReturn(this, (Sample.__proto__ || Object.getPrototypeOf(Sample)).apply(this, arguments));
 	}
 
-	_createClass(Layout, [{
+	_createClass(Sample, [{
 		key: 'render',
 		value: function render() {
 			return _react2.default.createElement(
 				'div',
-				{ className: 'app-container' },
+				{ className: 'sample' },
 				_react2.default.createElement(
-					'header',
-					null,
-					_react2.default.createElement(
-						_reactRouter.Link,
-						{ to: '/' },
-						_react2.default.createElement('img', { src: '/img/logo-judo-heroes.png', className: 'logo' })
-					)
-				),
-				_react2.default.createElement(
-					'div',
-					{ className: 'app-content' },
-					this.props.children
-				),
-				_react2.default.createElement(
-					'footer',
-					null,
-					_react2.default.createElement(
-						'p',
-						null,
-						'Ts is the jhbjjjj'
-					)
+					'h1',
+					{ className: 'sample-header' },
+					'Sample'
 				)
 			);
 		}
 	}]);
 
-	return Layout;
+	return Sample;
 }(_react2.default.Component);
 
-var _default = Layout;
+var _default = Sample;
 exports.default = _default;
 ;
 
@@ -74,9 +58,9 @@ var _temp = function () {
 		return;
 	}
 
-	__REACT_HOT_LOADER__.register(Layout, 'Layout', 'src/components/Layout.js');
+	__REACT_HOT_LOADER__.register(Sample, 'Sample', 'src/components/Sample/Sample.jsx');
 
-	__REACT_HOT_LOADER__.register(_default, 'default', 'src/components/Layout.js');
+	__REACT_HOT_LOADER__.register(_default, 'default', 'src/components/Sample/Sample.jsx');
 }();
 
 ;

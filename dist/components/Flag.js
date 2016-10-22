@@ -72,4 +72,20 @@ var Flag = function (_React$Component) {
   return Flag;
 }(_react2.default.Component);
 
-exports.default = Flag;
+var _default = Flag;
+exports.default = _default;
+;
+
+var _temp = function () {
+  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+    return;
+  }
+
+  __REACT_HOT_LOADER__.register(data, 'data', 'src/components/Flag.jsx');
+
+  __REACT_HOT_LOADER__.register(Flag, 'Flag', 'src/components/Flag.jsx');
+
+  __REACT_HOT_LOADER__.register(_default, 'default', 'src/components/Flag.jsx');
+}();
+
+;

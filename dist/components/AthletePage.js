@@ -34,6 +34,10 @@ var _athletes = require('../data/athletes');
 
 var _athletes2 = _interopRequireDefault(_athletes);
 
+var _Sample = require('./Sample/Sample');
+
+var _Sample2 = _interopRequireDefault(_Sample);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -83,6 +87,7 @@ var AthletePage = function (_React$Component) {
           _react2.default.createElement(
             'section',
             { className: 'description' },
+            _react2.default.createElement(_Sample2.default, null),
             'Olympic medalist from ',
             _react2.default.createElement(
               'strong',
@@ -138,4 +143,18 @@ var AthletePage = function (_React$Component) {
   return AthletePage;
 }(_react2.default.Component);
 
-exports.default = AthletePage;
+var _default = AthletePage;
+exports.default = _default;
+;
+
+var _temp = function () {
+  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+    return;
+  }
+
+  __REACT_HOT_LOADER__.register(AthletePage, 'AthletePage', 'src/components/AthletePage.js');
+
+  __REACT_HOT_LOADER__.register(_default, 'default', 'src/components/AthletePage.js');
+}();
+
+;

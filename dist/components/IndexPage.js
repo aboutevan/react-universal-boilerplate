@@ -46,6 +46,11 @@ var IndexPage = function (_React$Component) {
         _react2.default.createElement(
           'div',
           { className: 'athletes-selector' },
+          _react2.default.createElement(
+            'h1',
+            null,
+            'helldo'
+          ),
           _athletes2.default.map(function (athleteData) {
             return _react2.default.createElement(_AthletePreview2.default, _extends({ key: athleteData.id }, athleteData));
           })
@@ -57,4 +62,18 @@ var IndexPage = function (_React$Component) {
   return IndexPage;
 }(_react2.default.Component);
 
-exports.default = IndexPage;
+var _default = IndexPage;
+exports.default = _default;
+;
+
+var _temp = function () {
+  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+    return;
+  }
+
+  __REACT_HOT_LOADER__.register(IndexPage, 'IndexPage', 'src/components/IndexPage.jsx');
+
+  __REACT_HOT_LOADER__.register(_default, 'default', 'src/components/IndexPage.jsx');
+}();
+
+;

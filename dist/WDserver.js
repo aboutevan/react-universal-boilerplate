@@ -4,21 +4,13 @@ var _path = require('path');
 
 var _path2 = _interopRequireDefault(_path);
 
-var _express = require('express');
-
-var _express2 = _interopRequireDefault(_express);
-
 var _webpack = require('webpack');
 
 var _webpack2 = _interopRequireDefault(_webpack);
 
-var _webpackDevMiddleware = require('webpack-dev-middleware');
+var _express = require('express');
 
-var _webpackDevMiddleware2 = _interopRequireDefault(_webpackDevMiddleware);
-
-var _webpackHotMiddleware = require('webpack-hot-middleware');
-
-var _webpackHotMiddleware2 = _interopRequireDefault(_webpackHotMiddleware);
+var _express2 = _interopRequireDefault(_express);
 
 var _react = require('react');
 
@@ -36,6 +28,14 @@ var _NotFoundPage = require('./components/NotFoundPage');
 
 var _NotFoundPage2 = _interopRequireDefault(_NotFoundPage);
 
+var _webpackDevServer = require('webpack-dev-server');
+
+var _webpackDevServer2 = _interopRequireDefault(_webpackDevServer);
+
+var _webpack3 = require('../webpack.config');
+
+var _webpack4 = _interopRequireDefault(_webpack3);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 require('babel-register')({
@@ -43,42 +43,18 @@ require('babel-register')({
 });
 // import { Server } from 'http';
 
-var config = require('../webpack.config.js');
-var env = process.env.NODE_ENV || 'development';
-var development = process.env.NODE_ENV !== 'production';
-var port = process.env.PORT || 3000;
-console.log(process.env.NODE_ENV);
 
 // initialize the server
 var app = new _express2.default();
+
 // const server = new Server(app);
 
 // configure support for ejs
 app.set('view engine', 'ejs');
 app.set('views', _path2.default.join(__dirname, 'views'));
 
-if (development) {
-	var compiler = (0, _webpack2.default)(config);
-	var middleware = (0, _webpackDevMiddleware2.default)(compiler, {
-		publicPath: config.output.publicPath,
-		stats: {
-			colors: true,
-			hash: false,
-			timings: true,
-			chunks: false,
-			chunkModules: false,
-			modules: false
-		}
-	});
-
-	app.use(middleware);
-	app.use((0, _webpackHotMiddleware2.default)(compiler));
-
-	// define folder used for static assets
-	app.use(_express2.default.static(_path2.default.join(__dirname, 'static')));
-} else {
-	app.use(_express2.default.static(_path2.default.join(__dirname, 'static')));
-}
+// define folder used for static assets
+app.use(_express2.default.static(_path2.default.join(__dirname, 'static')));
 
 // universal routing and rendering
 app.get('*', function (req, res) {
@@ -110,12 +86,27 @@ app.get('*', function (req, res) {
 });
 
 // start the server
-
+var port = process.env.PORT || 3000;
+var env = process.env.NODE_ENV || 'production';
 app.listen(port, function (err) {
 	if (err) {
 		return console.error(err);
 	}
 	console.info('Server running on http://localhost:' + port + ' [' + env + ']');
+});
+
+new _webpackDevServer2.default((0, _webpack2.default)(_webpack4.default), {
+	// publicPath: config.output.publicPath,
+	hot: true,
+	historyApiFallback: true,
+	proxy: {
+		'*': 'http://localhost:3000'
+	}
+}).listen(3001, 'localhost', function (err, result) {
+	if (err) {
+		console.log(err);
+	}
+	console.log('listening at localhost:3001');
 });
 ;
 
@@ -124,13 +115,11 @@ var _temp = function () {
 		return;
 	}
 
-	__REACT_HOT_LOADER__.register(env, 'env', 'src/server.js');
+	__REACT_HOT_LOADER__.register(app, 'app', 'src/WDserver.js');
 
-	__REACT_HOT_LOADER__.register(development, 'development', 'src/server.js');
+	__REACT_HOT_LOADER__.register(port, 'port', 'src/WDserver.js');
 
-	__REACT_HOT_LOADER__.register(port, 'port', 'src/server.js');
-
-	__REACT_HOT_LOADER__.register(app, 'app', 'src/server.js');
+	__REACT_HOT_LOADER__.register(env, 'env', 'src/WDserver.js');
 }();
 
 ;

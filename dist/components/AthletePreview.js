@@ -59,4 +59,18 @@ var AthletePreview = function (_React$Component) {
   return AthletePreview;
 }(_react2.default.Component);
 
-exports.default = AthletePreview;
+var _default = AthletePreview;
+exports.default = _default;
+;
+
+var _temp = function () {
+  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+    return;
+  }
+
+  __REACT_HOT_LOADER__.register(AthletePreview, 'AthletePreview', 'src/components/AthletePreview.js');
+
+  __REACT_HOT_LOADER__.register(_default, 'default', 'src/components/AthletePreview.js');
+}();
+
+;

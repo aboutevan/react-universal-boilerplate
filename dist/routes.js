@@ -36,4 +36,18 @@ var routes = _react2.default.createElement(
   _react2.default.createElement(_reactRouter.Route, { path: '*', component: _NotFoundPage2.default })
 );
 
-exports.default = routes;
+var _default = routes;
+exports.default = _default;
+;
+
+var _temp = function () {
+  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+    return;
+  }
+
+  __REACT_HOT_LOADER__.register(routes, 'routes', 'src/routes.js');
+
+  __REACT_HOT_LOADER__.register(_default, 'default', 'src/routes.js');
+}();
+
+;

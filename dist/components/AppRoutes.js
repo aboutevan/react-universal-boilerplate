@@ -43,4 +43,18 @@ var AppRoutes = function (_React$Component) {
 	return AppRoutes;
 }(_react2.default.Component);
 
-exports.default = AppRoutes;
+var _default = AppRoutes;
+exports.default = _default;
+;
+
+var _temp = function () {
+	if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+		return;
+	}
+
+	__REACT_HOT_LOADER__.register(AppRoutes, 'AppRoutes', 'src/components/AppRoutes.js');
+
+	__REACT_HOT_LOADER__.register(_default, 'default', 'src/components/AppRoutes.js');
+}();
+
+;

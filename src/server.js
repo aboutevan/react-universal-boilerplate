@@ -13,20 +13,23 @@ require('babel-register')({
 	presets: [ 'es2015', 'react' ]
 });
 const config = require('../webpack.config.js')
-const isDevelopment = process.env.NODE_ENV !== 'production';
-const port = process.env.PORT || 3000;
 const env = process.env.NODE_ENV || 'development';
+const development = process.env.NODE_ENV !== 'production';
+const port = process.env.PORT || 3000;
 console.log(process.env.NODE_ENV)
 
 // initialize the server
 const app = new express();
 // const server = new Server(app);
 
-// if (isDevelopment) {
+// configure support for ejs
+app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, 'views'));
+
+if (development) {
   const compiler = webpack(config);
   const middleware = webpackMiddleware(compiler, {
     publicPath: config.output.publicPath,
-    // contentBase: 'src',
     stats: {
       colors: true,
       hash: false,
@@ -39,24 +42,12 @@ const app = new express();
 
   app.use(middleware);
   app.use(webpackHotMiddleware(compiler));
-  // app.get('*', function response(req, res) {
-  //   res.write(middleware.fileSystem.readFileSync(path.join(__dirname, 'dist/index.html')));
-  //   res.end();
-  // });
-// }
-// else {
-//   app.use(express.static(__dirname + '/dist'));
-//   app.get('*', function response(req, res) {
-//     res.sendFile(path.join(__dirname, 'dist/index.html'));
-//   });
-// }
 
-// configure support for ejs
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
-
-// define folder used for static assets
-app.use(express.static(path.join(__dirname, 'static')));
+  // define folder used for static assets
+  app.use(express.static(path.join(__dirname, 'static')));
+} else {
+  app.use(express.static(path.join(__dirname, 'static')));
+}
 
 // universal routing and rendering
 app.get('*', (req, res) => {
