@@ -11,7 +11,7 @@ const config = {
 		path.join(__dirname, 'src', 'app-client.js')
 	],
 	output: {
-		path: path.join(__dirname, 'src', 'static', 'js'),
+		path: path.join(__dirname, 'dist', 'static', 'js'),
 		filename: 'bundle.js',
 		publicPath: '/static/'
 	},
@@ -23,7 +23,7 @@ const config = {
 		new webpack.NoErrorsPlugin(),
 		new webpack.DefinePlugin({
 			'process.env': {
-				NODE_ENV: JSON.stringify('development'),
+				NODE_ENV: JSON.stringify('production'),
 				BROWSER: JSON.stringify(true)
 			}
 		}),
@@ -50,7 +50,7 @@ const config = {
 				to: path.join(__dirname, 'dist', 'views')
 			}
 		]),
-		new ExtractTextPlugin('bundle.css')
+		new ExtractTextPlugin('../css/bundle.css')
 	],
 	module: {
 		loaders: [

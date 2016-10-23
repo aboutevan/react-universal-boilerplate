@@ -7,7 +7,7 @@ export default class Sample extends React.Component {
 	render () {
 		return (
 			<div className='sample'>
-				<h1 className='sample-header'>Sample</h1>
+				<h1 className='sample-header'>10000</h1>
 			</div>
 		);
 	}

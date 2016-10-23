@@ -1,5 +1,6 @@
 import path from 'path';
-// import { Server } from 'http';
+import pug from 'pug';
+const fs = require('fs');
 import express from 'express';
 import webpack from 'webpack';
 import webpackMiddleware from 'webpack-dev-middleware';
@@ -16,11 +17,15 @@ const config = require('../webpack.config.js')
 const env = process.env.NODE_ENV || 'development';
 const development = process.env.NODE_ENV !== 'production';
 const port = process.env.PORT || 3000;
-console.log(process.env.NODE_ENV)
+
+const templatePath = require.resolve('./views/index.pug')
+const templateFn = require('pug').compileFile(templatePath)
 
 // initialize the server
 const app = new express();
-// const server = new Server(app);
+
+// set locals
+app.locals.env = env
 
 // configure support for ejs
 app.set('view engine', 'pug');
@@ -46,6 +51,8 @@ if (development) {
   // define folder used for static assets
   app.use(express.static(path.join(__dirname, 'static')));
 } else {
+	// const html = pug.renderFile('views/index.pug')
+	// console.log(html)
   app.use(express.static(path.join(__dirname, 'static')));
 }
 
@@ -76,7 +83,12 @@ app.get('*', (req, res) => {
 			}
 
 			// render the index template with the embedded react markup
-			return res.render('index', { markup })
+			// return res.render('index', { markup })
+			function compileNow() {
+				return templateFn({ markup });
+			}
+			res.write(templateFn({ cache: true, markup }));
+			res.end();
 		}
 	);
 });

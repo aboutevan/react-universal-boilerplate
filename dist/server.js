@@ -4,6 +4,10 @@ var _path = require('path');
 
 var _path2 = _interopRequireDefault(_path);
 
+var _pug = require('pug');
+
+var _pug2 = _interopRequireDefault(_pug);
+
 var _express = require('express');
 
 var _express2 = _interopRequireDefault(_express);
@@ -38,23 +42,27 @@ var _NotFoundPage2 = _interopRequireDefault(_NotFoundPage);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var fs = require('fs');
+
 require('babel-register')({
 	presets: ['es2015', 'react']
 });
-// import { Server } from 'http';
-
 var config = require('../webpack.config.js');
 var env = process.env.NODE_ENV || 'development';
 var development = process.env.NODE_ENV !== 'production';
 var port = process.env.PORT || 3000;
-console.log(process.env.NODE_ENV);
+
+var templatePath = require.resolve('./views/index.pug');
+var templateFn = require('pug').compileFile(templatePath);
 
 // initialize the server
 var app = new _express2.default();
-// const server = new Server(app);
+
+// set locals
+app.locals.env = env;
 
 // configure support for ejs
-app.set('view engine', 'ejs');
+app.set('view engine', 'pug');
 app.set('views', _path2.default.join(__dirname, 'views'));
 
 if (development) {
@@ -77,6 +85,8 @@ if (development) {
 	// define folder used for static assets
 	app.use(_express2.default.static(_path2.default.join(__dirname, 'static')));
 } else {
+	// const html = pug.renderFile('views/index.pug')
+	// console.log(html)
 	app.use(_express2.default.static(_path2.default.join(__dirname, 'static')));
 }
 
@@ -105,7 +115,12 @@ app.get('*', function (req, res) {
 		}
 
 		// render the index template with the embedded react markup
-		return res.render('index', { markup: markup });
+		// return res.render('index', { markup })
+		function compileNow() {
+			return templateFn({ markup: markup });
+		}
+		res.write(templateFn({ cache: true, markup: markup }));
+		res.end();
 	});
 });
 
@@ -117,20 +132,3 @@ app.listen(port, function (err) {
 	}
 	console.info('Server running on http://localhost:' + port + ' [' + env + ']');
 });
-;
-
-var _temp = function () {
-	if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-		return;
-	}
-
-	__REACT_HOT_LOADER__.register(env, 'env', 'src/server.js');
-
-	__REACT_HOT_LOADER__.register(development, 'development', 'src/server.js');
-
-	__REACT_HOT_LOADER__.register(port, 'port', 'src/server.js');
-
-	__REACT_HOT_LOADER__.register(app, 'app', 'src/server.js');
-}();
-
-;
