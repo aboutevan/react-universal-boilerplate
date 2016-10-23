@@ -4,7 +4,7 @@ import AppRoutes from './components/AppRoutes';
 
 window.onload = () => {
   ReactDOM.render(<AppRoutes/>, document.getElementById('main'));
-  document.getElementById('main').classList.remove('no-fouc');
+  // document.getElementById('main').classList.remove('no-fouc');
 
   if(process.env === 'development') {
 		module.hot.accept('./components/AppRoutes', () => {

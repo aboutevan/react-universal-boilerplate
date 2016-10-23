@@ -18,8 +18,8 @@ const env = process.env.NODE_ENV || 'development';
 const development = process.env.NODE_ENV !== 'production';
 const port = process.env.PORT || 3000;
 
-const templatePath = require.resolve('./views/index.pug')
-const templateFn = require('pug').compileFile(templatePath)
+// const templatePath = require.resolve('./views/index.pug')
+// const templateFn = require('pug').compileFile(templatePath)
 
 // initialize the server
 const app = new express();
@@ -28,7 +28,7 @@ const app = new express();
 app.locals.env = env
 
 // configure support for ejs
-app.set('view engine', 'pug');
+app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 if (development) {
@@ -83,12 +83,7 @@ app.get('*', (req, res) => {
 			}
 
 			// render the index template with the embedded react markup
-			// return res.render('index', { markup })
-			function compileNow() {
-				return templateFn({ markup });
-			}
-			res.write(templateFn({ cache: true, markup }));
-			res.end();
+			return res.render('index', { markup })
 		}
 	);
 });

@@ -42,6 +42,14 @@ var _NotFoundPage2 = _interopRequireDefault(_NotFoundPage);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _pugFlattenInnerHelper(arr, val) {
+	return arr.concat(Array.isArray(val) ? _pugFlatten(val) : val);
+}
+
+function _pugFlatten(arr) {
+	return arr.reduce(_pugFlattenInnerHelper, []);
+}
+
 var fs = require('fs');
 
 require('babel-register')({
@@ -52,8 +60,8 @@ var env = process.env.NODE_ENV || 'development';
 var development = process.env.NODE_ENV !== 'production';
 var port = process.env.PORT || 3000;
 
-var templatePath = require.resolve('./views/index.pug');
-var templateFn = require('pug').compileFile(templatePath);
+// const templatePath = require.resolve('./views/index.pug')
+// const templateFn = require('pug').compileFile(templatePath)
 
 // initialize the server
 var app = new _express2.default();
@@ -62,7 +70,7 @@ var app = new _express2.default();
 app.locals.env = env;
 
 // configure support for ejs
-app.set('view engine', 'pug');
+app.set('view engine', 'ejs');
 app.set('views', _path2.default.join(__dirname, 'views'));
 
 if (development) {
@@ -115,12 +123,7 @@ app.get('*', function (req, res) {
 		}
 
 		// render the index template with the embedded react markup
-		// return res.render('index', { markup })
-		function compileNow() {
-			return templateFn({ markup: markup });
-		}
-		res.write(templateFn({ cache: true, markup: markup }));
-		res.end();
+		return res.render('index', { markup: markup });
 	});
 });
 
