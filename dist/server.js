@@ -42,14 +42,6 @@ var _NotFoundPage2 = _interopRequireDefault(_NotFoundPage);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _pugFlattenInnerHelper(arr, val) {
-	return arr.concat(Array.isArray(val) ? _pugFlatten(val) : val);
-}
-
-function _pugFlatten(arr) {
-	return arr.reduce(_pugFlattenInnerHelper, []);
-}
-
 var fs = require('fs');
 
 require('babel-register')({

@@ -60,10 +60,15 @@ const config = {
 				include: path.join(__dirname, 'src')
 			},
 			{
-				test: /\.css$/,
-				loader: ExtractTextPlugin.extract('style', 'css!'),
+				test: /\.sass$/,
+				loader: ExtractTextPlugin.extract('style', 'css!sass!postcss'),
 				include: path.join(__dirname, 'src')
 			}
+		]
+	},
+	postcss: function () {
+		return [
+			require('autoprefixer')
 		]
 	}
 }

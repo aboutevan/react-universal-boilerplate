@@ -1,0 +1,9 @@
+{
+	"extends": "airbnb",
+  "rules": {
+    "global-require": 0
+  },
+  "env": {
+    "browser": true
+  }
+}

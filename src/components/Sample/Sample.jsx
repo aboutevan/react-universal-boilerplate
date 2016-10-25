@@ -1,14 +1,16 @@
 import React from 'react';
-if(process.env.BROWSER) {
-	require('./Sample.css');
+import template from './SampleComponent';
+
+if (process.env.BROWSER) {
+  require('./Sample.sass');
+}
+
+if (module.hot) {
+  module.hot.accept();
 }
 
 export default class Sample extends React.Component {
-	render () {
-		return (
-			<div className='sample'>
-				<h1 className='sample-header'>10000</h1>
-			</div>
-		);
-	}
+  render() {
+    return template;
+  }
 }

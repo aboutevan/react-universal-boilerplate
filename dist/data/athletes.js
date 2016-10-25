@@ -3,15 +3,6 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-function _pugFlattenInnerHelper(arr, val) {
-  return arr.concat(Array.isArray(val) ? _pugFlatten(val) : val);
-}
-
-function _pugFlatten(arr) {
-  return arr.reduce(_pugFlattenInnerHelper, []);
-}
-
 var athletes = [{
   'id': 'driulis-gonzalez',
   'name': 'Driulis González',

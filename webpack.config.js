@@ -29,6 +29,14 @@ const config = {
     new webpack.optimize.OccurenceOrderPlugin()
 	],
 	module: {
+		preLoaders: [
+			{
+				test: /\.js|jsx?$/,
+	      loaders: ['eslint-loader'],
+	      include: path.join(__dirname, 'src'),
+	      exclude: path.join(__dirname, 'src', 'data')
+			}
+		],
 		loaders: [
 			{
 				test: /\.jsx?$/,
@@ -36,10 +44,20 @@ const config = {
 				include: path.join(__dirname, 'src')
 			},
 			{
-				test: /\.css$/,
-				loader: 'style!css'
+				test: /\.sass$/,
+				loader: 'style!css?sourceMap!sass?sourceMap!postcss',
+				include: path.join(__dirname, 'src')
 			}
 		]
+	},
+	postcss: function () {
+		return [
+			require('autoprefixer')
+		]
+	},
+	eslint: {
+		configFile: './.eslintrc',
+		emitWarning: true
 	}
 }
 

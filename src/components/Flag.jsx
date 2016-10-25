@@ -1,38 +1,42 @@
-// src/components/Flag.js
 import React from 'react';
 
 const data = {
-  'cu': {
-    'name': 'Cuba',
-    'icon': 'flag-cu.png',
+  cu: {
+    name: 'Cuba',
+    icon: 'flag-cu.png',
   },
-  'fr': {
-    'name': 'France',
-    'icon': 'flag-fr.png',
+  fr: {
+    name: 'France',
+    icon: 'flag-fr.png',
   },
-  'jp': {
-    'name': 'Japan',
-    'icon': 'flag-jp.png',
+  jp: {
+    name: 'Japan',
+    icon: 'flag-jp.png',
   },
-  'nl': {
-    'name': 'Netherlands',
-    'icon': 'flag-nl.png',
+  nl: {
+    name: 'Netherlands',
+    icon: 'flag-nl.png',
   },
-  'uz': {
-    'name': 'Uzbekistan',
-    'icon': 'flag-uz.png',
-  }
+  uz: {
+    name: 'Uzbekistan',
+    icon: 'flag-uz.png',
+  },
 };
 
-export default class Flag extends React.Component {
-	render () {
-		const name = data[this.props.code].name;
-		const icon = data[this.props.code].icon;
-		return (
-			<span className="flag">
-				<img src={`/img/${icon}`} title={name} className="icon"/>
-				{this.props.showName && <span className='name'>{name}</span>}
-			</span>
-		);
-	}
-}
+const Flag = ({ code, showName }) => {
+  const name = data[code].name;
+  const icon = data[code].icon;
+  return (
+    <span className="flag">
+      <img alt={name} src={`/img/${icon}`} title={name} className="icon" />
+      {showName && <span className="name">{name}</span>}
+    </span>
+  );
+};
+
+Flag.propTypes = {
+  code: React.PropTypes.string,
+  showName: React.PropTypes.string,
+};
+
+export default Flag;
