@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon src/WDserver.js --exec babel-node",
-    "start2": "npm run dev-webpack && NODE_ENV=development babel-node src/server.js",
+    "start2": "npm run dev-webpack && babel-node src/server.js",
     "build": "NODE_ENV=production babel src -d dist",
     "productionWebpack": "NODE_ENV=production webpack -p --config ./webpack.production.config.js",
     "serve": "npm run build && npm run productionWebpack && NODE_ENV=production node dist/server.js",

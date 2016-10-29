@@ -1,6 +1,6 @@
 import React from 'react';
-import AthletePreview from './AthletePreview';
-import athletes from '../data/athletes';
+import AthletePreview from '../../presentation/AthletePreview/AthletePreview';
+import athletes from '../../../data/athletes';
 
 const IndexPage = () => (
   <div className="home">

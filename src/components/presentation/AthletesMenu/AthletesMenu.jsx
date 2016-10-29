@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import athletes from '../data/athletes';
+import athletes from '../../../data/athletes';
 
 const AthletesMenu = () => (
   <nav className="athletes-menu">

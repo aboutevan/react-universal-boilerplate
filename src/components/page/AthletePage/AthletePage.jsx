@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router';
-import NotFoundPage from './NotFoundPage';
-import AthletesMenu from './AthletesMenu';
-import Medal from './Medal';
-import Flag from './Flag';
-import athletes from '../data/athletes';
-import Sample from './Sample/Sample';
+import NotFoundPage from '../NotFoundPage/NotFoundPage';
+import AthletesMenu from '../../presentation/AthletesMenu/AthletesMenu';
+import Medal from '../../presentation/Medal/Medal';
+import Flag from '../../presentation/Flag/Flag';
+import athletes from '../../../data/athletes';
+import Sample from '../../presentation/Sample/Sample';
 
 const AthletePage = ({ params }) => {
   const id = params.id;
@@ -18,6 +18,7 @@ const AthletePage = ({ params }) => {
     <div className="athlete-full">
       <AthletesMenu />
       <div className="athlete">
+        <h1> FUCK YOUR COUchssssssdddyyy</h1>
         <header style={headerStyle} />
         <div className="picture-container">
           <img alt={athlete.name} src={`/img/${athlete.image}`} />
