@@ -18,7 +18,7 @@ const AthletePage = ({ params }) => {
     <div className="athlete-full">
       <AthletesMenu />
       <div className="athlete">
-        <h1> FUCK YOUR COUchssssssdddyyy</h1>
+        <h1> FUCK YOUR couch </h1>
         <header style={headerStyle} />
         <div className="picture-container">
           <img alt={athlete.name} src={`/img/${athlete.image}`} />

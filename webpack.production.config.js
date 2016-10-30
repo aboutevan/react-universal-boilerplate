@@ -4,11 +4,8 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const config = {
-	devtool: 'eval-source-map',
 	entry: [
-		// 'webpack/hot/dev-server',
-		// 'webpack-hot-middleware/client',
-		path.join(__dirname, 'src', 'app-client.js')
+		path.join(__dirname, 'src', 'app.jsx')
 	],
 	output: {
 		path: path.join(__dirname, 'dist', 'static', 'js'),
@@ -16,7 +13,6 @@ const config = {
 		publicPath: '/static/'
 	},
 	resolve: {
-		// allow filename imports without suffix
 		extensions: ['', '.js', '.jsx']
 	},
 	plugins: [
@@ -46,8 +42,8 @@ const config = {
 				to: path.join(__dirname, 'dist', 'static', 'img')
 			},
 			{
-				from: path.join(__dirname, 'src', 'views'),
-				to: path.join(__dirname, 'dist', 'views')
+				from: path.join(__dirname, 'src', 'index.ejs'),
+				to: path.join(__dirname, 'dist', 'index.ejs')
 			}
 		]),
 		new ExtractTextPlugin('../css/bundle.css')
