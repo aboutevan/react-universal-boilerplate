@@ -34,15 +34,16 @@ app.set('views', path.join(__dirname));
 if (env !== 'production') {
   const compiler = webpack(config);
   const middleware = webpackMiddleware(compiler, {
-    publicPath: config.output.publicPath,
-    stats: {
-      colors: true,
-      hash: false,
-      timings: true,
-      chunks: false,
-      chunkModules: false,
-      modules: false
-    }
+    noInfo: true,
+    publicPath: config.output.publicPath
+    // stats: {
+    //   colors: true,
+    //   hash: false,
+    //   timings: true,
+    //   chunks: false,
+    //   chunkModules: false,
+    //   modules: false
+    // }
   });
 
   app.use(middleware);

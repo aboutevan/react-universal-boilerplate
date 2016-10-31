@@ -1,19 +1,31 @@
 const webpack = require('webpack');
 const path = require('path');
+const vendors = require('./vendors.config.js');
 
 const config = {
 	devtool: 'eval-source-map',
-	entry: [
+	entry: {
 		// 'webpack/hot/dev-server',
-		'webpack-hot-middleware/client',
-		path.join(__dirname, 'src', 'app.jsx')
-	],
+		// 'webpack-hot-middleware/client',
+    app: ['webpack-hot-middleware/client', path.join(__dirname, 'src', 'app.jsx')],
+    vendor: vendors
+	},
 	output: {
 		path: path.join(__dirname, 'src', 'static', 'js'),
 		filename: 'bundle.js',
-		publicPath: '/static/'
+		publicPath: '/static/js/'
 	},
 	resolve: {
+    // modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+    // alias: {
+    //   layout: '/components/layout',
+    //   page: path.resolve(__dirname, 'src', 'components', 'page'),
+    //   presentation: '/components/presentation',
+    //   data: '/data',
+    //   core: '/core',
+    //   routes: '/routes',
+    //   static: '/static'
+    // },
 		// allow filename imports without suffix
 		extensions: ['', '.js', '.jsx']
 	},
@@ -26,12 +38,18 @@ const config = {
 				BROWSER: JSON.stringify(true)
 			}
 		}),
-    new webpack.optimize.OccurenceOrderPlugin()
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js', Infinity),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery'
+    })
 	],
 	module: {
 		preLoaders: [
 			{
-				test: /\.js|jsx?$/,
+				test: /\.jsx?$/,
 	      loaders: ['eslint-loader'],
 	      include: path.join(__dirname, 'src'),
 	      exclude: path.join(__dirname, 'src', 'data')
@@ -44,7 +62,7 @@ const config = {
 				include: path.join(__dirname, 'src')
 			},
 			{
-				test: /\.sass$/,
+				test: /\.(scss|sass)$/,
 				loader: 'style!css?sourceMap!sass?sourceMap!postcss',
 				include: path.join(__dirname, 'src')
 			}
