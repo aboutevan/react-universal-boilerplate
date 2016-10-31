@@ -1,9 +1,15 @@
 {
 	"extends": "airbnb",
   "rules": {
+    "no-console": 0,
     "global-require": 0
   },
   "env": {
     "browser": true
+  },
+  "globals": {
+    "$": true,
+    "jQuery": true,
+    "foundation": true
   }
 }
