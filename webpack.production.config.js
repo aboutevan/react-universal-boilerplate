@@ -2,15 +2,17 @@ const webpack = require('webpack');
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const vendors = require('./vendors.config.js');
 
 const config = {
-	entry: [
-		path.join(__dirname, 'src', 'app.jsx')
-	],
+	entry: {
+		app: path.join(__dirname, 'src', 'app.jsx'),
+    vendor: vendors
+	},
 	output: {
 		path: path.join(__dirname, 'dist', 'static', 'js'),
 		filename: 'bundle.js',
-		publicPath: '/static/'
+		publicPath: '/static/js/'
 	},
 	resolve: {
 		extensions: ['', '.js', '.jsx']
@@ -25,6 +27,12 @@ const config = {
 		}),
 		new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js', Infinity),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery'
+    }),
     new webpack.optimize.UglifyJsPlugin({
       compress: { warnings: false },
       mangle: true,
@@ -56,7 +64,7 @@ const config = {
 				include: path.join(__dirname, 'src')
 			},
 			{
-				test: /\.sass$/,
+				test: /\.(scss|sass)$/,
 				loader: ExtractTextPlugin.extract('style', 'css!sass!postcss'),
 				include: path.join(__dirname, 'src')
 			}

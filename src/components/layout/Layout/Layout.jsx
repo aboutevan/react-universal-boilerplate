@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router';
 
+if (process.env.BROWSER) {
+  require('../../../core/sass/all.core.sass');
+}
+
 const Layout = props => (
   <div className="app-container">
     <header>
