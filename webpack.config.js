@@ -5,8 +5,6 @@ const vendors = require('./vendors.config.js');
 const config = {
 	devtool: 'eval-source-map',
 	entry: {
-		// 'webpack/hot/dev-server',
-		// 'webpack-hot-middleware/client',
     app: ['webpack-hot-middleware/client', path.join(__dirname, 'src', 'app.jsx')],
     vendor: vendors
 	},
@@ -16,17 +14,6 @@ const config = {
 		publicPath: '/static/js/'
 	},
 	resolve: {
-    // modules: [path.resolve(__dirname, 'src'), 'node_modules'],
-    // alias: {
-    //   layout: '/components/layout',
-    //   page: path.resolve(__dirname, 'src', 'components', 'page'),
-    //   presentation: '/components/presentation',
-    //   data: '/data',
-    //   core: '/core',
-    //   routes: '/routes',
-    //   static: '/static'
-    // },
-		// allow filename imports without suffix
 		extensions: ['', '.js', '.jsx']
 	},
 	plugins: [

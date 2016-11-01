@@ -12,10 +12,6 @@ import { match, RouterContext } from 'react-router';
 import routes from './routes/Routes';
 import NotFoundPage from './components/page/NotFoundPage/NotFoundPage';
 
-// require('babel-register')({
-// 	presets: [ 'es2015', 'react' ]
-// });
-
 const config = require('../webpack.config.js')
 const env = process.env.NODE_ENV || 'development';
 const port = process.env.PORT || 3000;

@@ -42,10 +42,6 @@ var _NotFoundPage2 = _interopRequireDefault(_NotFoundPage);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// require('babel-register')({
-// 	presets: [ 'es2015', 'react' ]
-// });
-
 var config = require('../webpack.config.js');
 var env = process.env.NODE_ENV || 'development';
 var port = process.env.PORT || 3000;
@@ -63,15 +59,16 @@ app.set('views', _path2.default.join(__dirname));
 if (env !== 'production') {
   var compiler = (0, _webpack2.default)(config);
   var _middleware = (0, _webpackDevMiddleware2.default)(compiler, {
-    publicPath: config.output.publicPath,
-    stats: {
-      colors: true,
-      hash: false,
-      timings: true,
-      chunks: false,
-      chunkModules: false,
-      modules: false
-    }
+    noInfo: true,
+    publicPath: config.output.publicPath
+    // stats: {
+    //   colors: true,
+    //   hash: false,
+    //   timings: true,
+    //   chunks: false,
+    //   chunkModules: false,
+    //   modules: false
+    // }
   });
 
   app.use(_middleware);
