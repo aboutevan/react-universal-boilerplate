@@ -10,7 +10,6 @@ import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
 
 import routes from './routes/Routes';
-import NotFoundPage from './components/page/NotFoundPage/NotFoundPage';
 
 const config = require('../webpack.config.js')
 const env = process.env.NODE_ENV || 'development';

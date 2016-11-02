@@ -1,5 +1,39 @@
 "use strict";
 
+const albums = [
+  {
+    'id': 'show-no-mercy',
+    'name': 'Show No Mercy',
+    'release': 'December 3, 1983',
+    'image': 'show_no_mercy.jpg',
+    'label': 'Metal Blade',
+    'link': 'https://en.wikipedia.org/wiki/Show_No_Mercy#/media/File:Slayer_-_Show_No_Mercy.jpg',
+    'stats': {
+      'certification': '',
+      'chart': [
+        {'country': ''},
+        {'country': ''}
+      ],
+      'sales': ''
+    }
+  },
+  {
+    'id': 'reign-in-blood',
+    'name': 'Reign in Blood',
+    'release': 'October 7, 1986',
+    'image': 'reign_in_blood.jpg',
+    'label': 'American',
+    'link': 'https://en.wikipedia.org/wiki/Reign_in_Blood',
+    'stats': {
+      'certification': 'US Gold',
+      'chart': [
+        {'US': '94'}
+      ],
+      'sales': '500,000+'
+    }
+  }
+]
+
 const athletes = [
   {
     'id': 'driulis-gonzalez',
@@ -131,4 +165,4 @@ const athletes = [
   }
 ];
 
-export default athletes;
+export default albums;
