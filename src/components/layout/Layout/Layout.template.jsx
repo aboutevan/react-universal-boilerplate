@@ -1,14 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router';
+
+import Header from '../../presentation/Header/Header';
 
 const template = props => (
-  <div className="app">
-    <header>
-      <Link to="/">
-        <img src="/img/slayer_logo.png" role="presentation" className="Layout__logo" />
-      </Link>
-    </header>
-    <div className="app-content">{props.children}</div>
+  <div className="layout">
+    <Header />
+    <div className="layout__content">{props.children}</div>
   </div>
 );
 

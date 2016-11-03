@@ -1,7 +1,7 @@
 import template from './Layout.template';
 
 if (process.env.BROWSER) {
-  require('../../../core/sass/all.core.sass');
+  require('./Layout.sass');
 }
 
 const Layout = template;

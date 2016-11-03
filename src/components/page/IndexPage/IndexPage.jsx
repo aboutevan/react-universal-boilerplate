@@ -1,17 +1,17 @@
 import React from 'react';
-// import AthletePreview from '../../presentation/AthletePreview/AthletePreview';
 import AlbumThumb from '../../presentation/AlbumThumb/AlbumThumb';
 import albums from '../../../data/athletes';
 
 const IndexPage = () => (
-  <div className="home">
-    <div className="albums-selector">
-      {/* albums.map(albumData => <AthletePreview key={albumData.id} {...albumData} />) */}
+  <div className="index-page">
+    <div className="index-page__albums">
       { albums.map((albumData, i) =>
-        <AlbumThumb
-          key={i}
-          {...albumData}
-        />)}
+        <div className="album-thumb__layout-block" key={i}>
+          <AlbumThumb
+            {...albumData}
+          />
+        </div>
+      )}
     </div>
   </div>
 );

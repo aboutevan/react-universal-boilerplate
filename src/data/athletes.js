@@ -31,6 +31,26 @@ const albums = [
       ],
       'sales': '500,000+'
     }
+  },
+  {
+    'id': 'south-of-heaven',
+    'name': 'South of Heaven',
+    'release': 'July 5, 1988',
+    'image': 'south_of_heaven.jpg',
+    'label': 'American',
+    'link': 'https://en.wikipedia.org/wiki/South_of_Heaven',
+    'stats': {
+      'certification': 'US Gold',
+      'chart': [{
+        'US': '94',
+        'AUS': '53',
+        'GER': '23',
+        'NLD': '31',
+        'SWE': '50',
+        'UK': '25'
+      }],
+      'sales': '500,000+'
+    }
   }
 ]
 
