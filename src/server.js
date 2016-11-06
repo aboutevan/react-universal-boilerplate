@@ -1,15 +1,12 @@
 import path from 'path';
 import express from 'express';
-import webpack from 'webpack';
-import webpackMiddleware from 'webpack-dev-middleware';
-import webpackHotMiddleware from 'webpack-hot-middleware';
 import middleware from './middleware'
 
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
 
-import routes from './routes/Routes';
+import routes from './routes/routes';
 
 const config = require('../webpack.config.js')
 const env = process.env.NODE_ENV || 'development';
@@ -27,18 +24,13 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname));
 
 if (env !== 'production') {
+  const webpack = require('webpack');
+  const webpackMiddleware = require('webpack-dev-middleware');
+  const webpackHotMiddleware = require('webpack-hot-middleware');
   const compiler = webpack(config);
   const middleware = webpackMiddleware(compiler, {
     noInfo: true,
     publicPath: config.output.publicPath
-    // stats: {
-    //   colors: true,
-    //   hash: false,
-    //   timings: true,
-    //   chunks: false,
-    //   chunkModules: false,
-    //   modules: false
-    // }
   });
 
   app.use(middleware);
