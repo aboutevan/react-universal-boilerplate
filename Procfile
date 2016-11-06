@@ -1,1 +1,1 @@
-web: npm run production
+web: NODE_ENV=production node dist/server.js
