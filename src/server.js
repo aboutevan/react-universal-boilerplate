@@ -23,9 +23,7 @@ app.locals.env = env
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname));
 
-if (env === 'production') {
-  return
-} else {
+if (env !== 'production') {
   const runHMR = require('../tools/webpack/webpack').default
   runHMR(app);
 }
