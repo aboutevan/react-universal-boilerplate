@@ -24,7 +24,6 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname));
 
 if (env !== 'production') {
-  console.log('hehehehehehe')
   const runHMR = require('../tools/webpack/webpack').default
   runHMR(app);
 }
@@ -43,3 +42,5 @@ app.listen(port, err => {
 	}
 	console.info(`Server running on http://localhost:${port} [${env}]`)
 })
+
+export default app;
