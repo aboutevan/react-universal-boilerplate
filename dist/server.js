@@ -39,11 +39,6 @@ app.locals.env = env;
 app.set('view engine', 'ejs');
 app.set('views', _path2.default.join(__dirname));
 
-if (env !== 'production') {
-	var runHMR = require('../tools/webpack/webpack').default;
-	runHMR(app);
-}
-
 app.use(_express2.default.static(_path2.default.join(__dirname, 'static')));
 
 // universal routing and rendering
