@@ -28,7 +28,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var env = process.env.NODE_ENV || 'development';
 var port = process.env.PORT || 3000;
-var config = require('../tools/webpack/babel.webpack.config.js');
 
 // initialize the server
 var app = new _express2.default();
