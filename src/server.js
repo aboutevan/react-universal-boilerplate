@@ -10,7 +10,7 @@ import routes from './routes/routes';
 
 const env = process.env.NODE_ENV || 'development';
 const port = process.env.PORT || 3000;
-const config = require('../tools/webpack/babel.webpack.config.js')
+
 
 
 // initialize the server

@@ -8,7 +8,6 @@ const getLoaders = require('./loaders.js')
 
 
 const env = process.env.NODE_ENV || 'development'
-getPlugins(env)
 
 const config = {
 	devtool: env !== 'development' ? '' : 'eval-source-map',
