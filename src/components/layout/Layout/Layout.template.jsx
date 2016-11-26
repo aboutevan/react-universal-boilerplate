@@ -1,10 +1,7 @@
 import React from 'react';
 
-import Header from 'presentation/Header/Header';
-
 const template = props => (
   <div className="layout">
-    <Header />
     <div className="layout__content">{props.children}</div>
   </div>
 );
