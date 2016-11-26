@@ -1,5 +1,17 @@
 {
   "presets": ["es2015", "react"],
+  "plugins": [
+    ["module-resolver", {
+      "root": ["./src"],
+      "alias": {
+        "presentation": "./src/components/presentation",
+        "page": "./src/components/page",
+        "layout": "./src/components/layout",
+        "data": "./src/data",
+        "routes": "./src/routes"
+      }
+    }]
+  ],
   "env": {
   	"development": {
 		  "plugins": [

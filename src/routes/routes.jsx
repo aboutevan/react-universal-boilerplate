@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
-import Layout from '../components/layout/Layout/Layout';
-import IndexPage from '../components/page/IndexPage/IndexPage';
+import Layout from 'layout/Layout/Layout';
+import IndexPage from 'page/IndexPage/IndexPage';
 
-import AlbumPage from '../components/page/AlbumPage/AlbumPage';
-import NotFoundPage from '../components/page/NotFoundPage/NotFoundPage';
+import AlbumPage from 'page/AlbumPage/AlbumPage';
+import NotFoundPage from 'page/NotFoundPage/NotFoundPage';
 
 const routes = (
   <Route path="/" component={Layout}>

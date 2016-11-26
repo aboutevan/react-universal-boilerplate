@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const path = require('path');
-const vendors = require('../../vendors.config.js');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -46,8 +45,7 @@ function getPlugins (env) {
         compress: { warnings: false },
         mangle: true,
         sourcemap: false,
-        beautify: false,
-        dead_code: true
+        beautify: false
       }),
       new CopyWebpackPlugin([
         {

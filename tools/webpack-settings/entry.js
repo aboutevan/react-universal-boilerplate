@@ -1,5 +1,5 @@
 const path = require('path');
-const vendors = require('../../vendors.config.js');
+const vendors = require('../vendors.config.js');
 
 function getEntry (env) {
   let entry

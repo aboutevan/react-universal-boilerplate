@@ -1,7 +1,7 @@
-import path from 'path';
+const path = require('path');
 
-function runHMR (app) {
-  const config = require('./babel.webpack.config.js');
+function runHMR (app, env) {
+  const config = require('../webpack.config.js');
   const webpack = require('webpack');
   const webpackMiddleware = require('webpack-dev-middleware');
   const webpackHotMiddleware = require('webpack-hot-middleware');
@@ -15,4 +15,4 @@ function runHMR (app) {
 
 }
 
-export default runHMR;
+module.exports = runHMR

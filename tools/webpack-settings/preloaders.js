@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const path = require('path');
-const vendors = require('../../vendors.config.js');
 
 function getPreloaders (env) {
   let preloaders
@@ -14,7 +13,14 @@ function getPreloaders (env) {
       }
     ]
   } else {
-
+    preloaders = [
+      {
+        test: /\.jsx?$/,
+        loaders: ['eslint-loader'],
+        include: path.join(__dirname, '../../dist'),
+        exclude: path.join(__dirname, '../../dist', 'data')
+      }
+    ]
   }
 
   return preloaders

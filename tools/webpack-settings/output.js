@@ -1,5 +1,4 @@
 const path = require('path');
-const vendors = require('../../vendors.config.js');
 
 function getOutput (env) {
   let output

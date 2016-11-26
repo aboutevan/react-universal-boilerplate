@@ -1,6 +1,6 @@
 import React from 'react';
-import AlbumThumb from '../../presentation/AlbumThumb/AlbumThumb';
-import albums from '../../../data/albums';
+import AlbumThumb from 'presentation/AlbumThumb/AlbumThumb';
+import albums from 'data/albums';
 
 const template = () => (
   <div className="index-page">

@@ -20,11 +20,6 @@ var template = function template(props) {
     { className: 'layout' },
     _react2.default.createElement(_Header2.default, null),
     _react2.default.createElement(
-      'h1',
-      null,
-      'HELLO YOU'
-    ),
-    _react2.default.createElement(
       'div',
       { className: 'layout__content' },
       props.children

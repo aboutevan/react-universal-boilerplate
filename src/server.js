@@ -24,8 +24,8 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname));
 
 if (env !== 'production') {
-  const runHMR = require('../tools/webpack/webpack').default
-  runHMR(app);
+  const runHMR = require('../tools/webpack-settings/hot-module')
+  runHMR(app, env);
 }
 
 app.use(express.static(path.join(__dirname, 'static')));

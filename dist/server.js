@@ -1,5 +1,9 @@
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
 var _path = require('path');
 
 var _path2 = _interopRequireDefault(_path);
@@ -39,6 +43,11 @@ app.locals.env = env;
 app.set('view engine', 'ejs');
 app.set('views', _path2.default.join(__dirname));
 
+if (env !== 'production') {
+	var runHMR = require('../tools/webpack-settings/hot-module');
+	runHMR(app, env);
+}
+
 app.use(_express2.default.static(_path2.default.join(__dirname, 'static')));
 
 // universal routing and rendering
@@ -53,3 +62,5 @@ app.listen(port, function (err) {
 	}
 	console.info('Server running on http://localhost:' + port + ' [' + env + ']');
 });
+
+exports.default = app;

@@ -1,8 +1,8 @@
 import React from 'react';
-import albums from '../../../data/albums';
+import AlbumMenu from 'presentation/AlbumMenu/AlbumMenu';
+import albums from 'data/albums';
 
-import AlbumMenu from '../../presentation/AlbumMenu/AlbumMenu';
-import NotFoundPage from '../NotFoundPage/NotFoundPage';
+import NotFoundPage from 'page/NotFoundPage/NotFoundPage';
 
 const template = ({ routeParams }) => {
   const album = albums.filter(data => data.id === routeParams.id)[0];

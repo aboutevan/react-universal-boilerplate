@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const path = require('path');
-const vendors = require('../../vendors.config.js');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 function getLoaders (env) {

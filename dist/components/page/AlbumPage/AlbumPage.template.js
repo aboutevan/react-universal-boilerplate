@@ -8,13 +8,13 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _albums = require('../../../data/albums');
-
-var _albums2 = _interopRequireDefault(_albums);
-
 var _AlbumMenu = require('../../presentation/AlbumMenu/AlbumMenu');
 
 var _AlbumMenu2 = _interopRequireDefault(_AlbumMenu);
+
+var _albums = require('../../../data/albums');
+
+var _albums2 = _interopRequireDefault(_albums);
 
 var _NotFoundPage = require('../NotFoundPage/NotFoundPage');
 
