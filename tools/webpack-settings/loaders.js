@@ -15,6 +15,10 @@ function getLoaders (env) {
         test: /\.(scss|sass)$/,
         loader: 'style!css?sourceMap!sass?sourceMap!postcss',
         include: path.join(__dirname, '../../src')
+      },
+      {
+        test: /\.json$/,
+        loader: 'json'
       }
     ]
   } else {
@@ -28,6 +32,10 @@ function getLoaders (env) {
         test: /\.(scss|sass)$/,
         loader: ExtractTextPlugin.extract('style', 'css!sass!postcss'),
         include: path.join(__dirname, '../../src')
+      },
+      {
+        test: /\.json$/,
+        loader: 'json'
       }
     ]
   }

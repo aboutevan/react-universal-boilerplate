@@ -20,7 +20,8 @@ const config = {
 
 	module: {
 		preLoaders: settings.preloaders(env),
-		loaders: settings.loaders(env)
+    loaders: settings.loaders(env),
+		postLoaders: settings.postloaders(env)
 	},
 
 	postcss: function () {

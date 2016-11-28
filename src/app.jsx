@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import AppRouter from './routes/AppRouter';
 
 $(document).ready(() => {
-  $(document).foundation();
+  // $(document).foundation();
   ReactDOM.render(<AppRouter />, document.getElementById('main'));
 
   if (process.env.NODE_ENV === 'development') {
