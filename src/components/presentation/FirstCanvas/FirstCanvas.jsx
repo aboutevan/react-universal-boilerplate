@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 
+
 export default class FirstCanvas extends Component {
+  // constructor(props) {
+  //   super(props);
+  // }
   componentDidMount() {
     const PIXI = require('pixi.js');
     this.renderer = PIXI.autoDetectRenderer(250, 250);

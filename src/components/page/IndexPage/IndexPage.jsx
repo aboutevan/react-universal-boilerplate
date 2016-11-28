@@ -1,10 +1,5 @@
-import React from 'react';
-import FirstCanvas from 'presentation/FirstCanvas/FirstCanvas';
+import template from './IndexPage.template';
 
-const IndexPage = () => (
-  <div className="index-page">
-    <FirstCanvas />
-  </div>
-);
+const IndexPage = template;
 
 export default IndexPage;

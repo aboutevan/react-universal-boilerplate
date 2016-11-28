@@ -1,5 +1,3 @@
-'use strict';
-
 const path = require('path');
 const vendors = require('../vendors.config.js');
 
