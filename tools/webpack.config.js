@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const requireDir = require('require-dir');
-const settings = requireDir('./webpack-settings');
+const settings = requireDir('./webpack');
 
 const env = process.env.NODE_ENV || 'development';
 
