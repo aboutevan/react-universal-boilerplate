@@ -1,5 +1,7 @@
-import template from './IndexPage.template';
+import React from 'react';
 
-const IndexPage = template;
+const IndexPage = () => (
+  <div className="index-page" />
+);
 
 export default IndexPage;
