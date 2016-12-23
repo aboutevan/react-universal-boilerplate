@@ -17,7 +17,7 @@ var Header = function Header() {
     _react2.default.createElement(
       "h1",
       null,
-      "Im a header"
+      "Im notsss a header"
     )
   );
 };
