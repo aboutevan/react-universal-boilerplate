@@ -8,7 +8,14 @@
         "page": "./src/components/page",
         "layout": "./src/components/layout",
         "data": "./src/data",
-        "routes": "./src/routes"
+        "routes": "./src/routes",
+        "image": "./src/static/img",
+        "TweenLite": "./node_modules/gsap/src/uncompressed/TweenLite.js",
+        "TweenMax": "./node_modules/gsap/src/uncompressed/TweenMax.js",
+        "TimelineLite": "./node_modules/gsap/src/uncompressed/TimelineLite.js",
+        "ScrollMagic": "./node_modules/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js",
+        "animation.gsap": ".node_modules/scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js",
+        "debug.addIndicators": ".node_modules/scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js"
       }
     }]
   ],

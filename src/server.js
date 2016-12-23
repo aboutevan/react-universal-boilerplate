@@ -7,8 +7,6 @@ import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
 
-import routes from './routes/routes';
-
 const env = process.env.NODE_ENV || 'development';
 const port = process.env.PORT || 3000;
 
@@ -25,7 +23,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname));
 
 if (env !== 'production') {
-  const runHMR = require('../tools/webpack-settings/hot-module')
+  const runHMR = require('../tools/webpack/hot-module')
   runHMR(app, env);
 }
 app.use(compression())

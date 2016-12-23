@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const requireDir = require('require-dir');
-const settings = requireDir('./webpack-settings');
+const settings = requireDir('./webpack');
 
 const env = process.env.NODE_ENV || 'development';
 
@@ -20,7 +20,8 @@ const config = {
 
 	module: {
 		preLoaders: settings.preloaders(env),
-		loaders: settings.loaders(env)
+    loaders: settings.loaders(env),
+		postLoaders: settings.postloaders(env)
 	},
 
 	postcss: function () {

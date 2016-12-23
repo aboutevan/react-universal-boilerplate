@@ -1,7 +1,7 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
-import routes from './routes/routes';
+import routes from './components/routes';
 import NotFoundPage from './components/page/NotFoundPage/NotFoundPage';
 
 export default (req, res) => {
