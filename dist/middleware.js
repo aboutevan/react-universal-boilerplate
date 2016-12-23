@@ -12,7 +12,7 @@ var _server = require('react-dom/server');
 
 var _reactRouter = require('react-router');
 
-var _routes = require('./routes/routes');
+var _routes = require('./components/routes');
 
 var _routes2 = _interopRequireDefault(_routes);
 

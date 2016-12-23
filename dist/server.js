@@ -28,10 +28,6 @@ var _server = require('react-dom/server');
 
 var _reactRouter = require('react-router');
 
-var _routes = require('./routes/routes');
-
-var _routes2 = _interopRequireDefault(_routes);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var env = process.env.NODE_ENV || 'development';
@@ -48,7 +44,7 @@ app.set('view engine', 'ejs');
 app.set('views', _path2.default.join(__dirname));
 
 if (env !== 'production') {
-	var runHMR = require('../tools/webpack-settings/hot-module');
+	var runHMR = require('../tools/webpack/hot-module');
 	runHMR(app, env);
 }
 app.use((0, _compression2.default)());

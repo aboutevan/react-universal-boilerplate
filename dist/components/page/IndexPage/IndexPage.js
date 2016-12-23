@@ -1,15 +1,17 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _IndexPage = require('./IndexPage.template');
+var _react = require("react");
 
-var _IndexPage2 = _interopRequireDefault(_IndexPage);
+var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var IndexPage = _IndexPage2.default;
+var IndexPage = function IndexPage() {
+  return _react2.default.createElement("div", { className: "index-page" });
+};
 
 exports.default = IndexPage;
