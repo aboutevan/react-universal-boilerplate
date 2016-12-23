@@ -1,3 +1,5 @@
 /src
 /test
 /spec
+/dist/core
+/tools
