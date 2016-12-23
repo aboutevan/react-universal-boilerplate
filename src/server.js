@@ -1,4 +1,5 @@
 import path from 'path';
+import compression from 'compression';
 import express from 'express';
 import middleware from './middleware';
 
@@ -27,7 +28,7 @@ if (env !== 'production') {
   const runHMR = require('../tools/webpack-settings/hot-module')
   runHMR(app, env);
 }
-
+app.use(compression())
 app.use(express.static(path.join(__dirname, 'static')));
 
 // universal routing and rendering
