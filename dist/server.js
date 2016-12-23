@@ -8,6 +8,10 @@ var _path = require('path');
 
 var _path2 = _interopRequireDefault(_path);
 
+var _compression = require('compression');
+
+var _compression2 = _interopRequireDefault(_compression);
+
 var _express = require('express');
 
 var _express2 = _interopRequireDefault(_express);
@@ -47,7 +51,7 @@ if (env !== 'production') {
 	var runHMR = require('../tools/webpack-settings/hot-module');
 	runHMR(app, env);
 }
-
+app.use((0, _compression2.default)());
 app.use(_express2.default.static(_path2.default.join(__dirname, 'static')));
 
 // universal routing and rendering
