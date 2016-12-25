@@ -4,9 +4,10 @@
   "description": "A universal React app",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --config ./tools/webpack.config.js && nodemon src/server.js --exec babel-node",
-    "build": "NODE_ENV=production webpack -p --config ./tools/webpack.config.js && NODE_ENV=production babel src -d dist",
-    "production": "rm -rf dist && npm run build && NODE_ENV=production node dist/server.js"
+    "start": "npm run modernizr && webpack --config ./tools/webpack.config.js && nodemon src/server.js --exec babel-node",
+    "build": "npm run modernizr && NODE_ENV=production webpack -p --config ./tools/webpack.config.js && NODE_ENV=production babel src -d dist",
+    "production": "rm -rf dist && npm run build && NODE_ENV=production node dist/server.js",
+    "modernizr": "modernizr -c modernizr.config.json -d ./src/static/js -u"
   },
   "author": "Evan Salzbrenner",
   "license": "MIT",
@@ -24,12 +25,12 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.5.1",
-    "babel-loader": "^6.2.5",
     "babel-cli": "^6.16.0",
     "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-module-resolver": "^2.3.0",
     "babel-preset-es2015": "^6.16.0",
     "babel-preset-react": "^6.16.0",
-    "babel-plugin-module-resolver": "^2.3.0",
     "babel-preset-react-hmre": "^1.1.1",
     "copy-webpack-plugin": "^3.0.1",
     "css-loader": "^0.25.0",
@@ -43,6 +44,7 @@
     "eslint-plugin-react": "^6.4.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "gsap": "^1.19.0",
+    "modernizr": "^3.3.1",
     "node-sass": "^3.10.1",
     "nodemon": "^1.11.0",
     "postcss-loader": "^1.0.0",
