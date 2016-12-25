@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
 
-// $(document).foundation();
 ReactDOM.render(<App />, document.getElementById('main'));
 
 if (process.env.NODE_ENV === 'development') {

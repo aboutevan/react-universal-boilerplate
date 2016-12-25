@@ -16,7 +16,6 @@
     "ejs": "^2.5.2",
     "express": "^4.14.0",
     "foundation-sites": "^6.2.4",
-    "jquery": "~2.2.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-ga": "^2.1.2",

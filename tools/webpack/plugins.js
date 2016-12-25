@@ -17,13 +17,7 @@ function getPlugins (env) {
           BROWSER: true
         }
       }),
-      new webpack.optimize.OccurenceOrderPlugin(),
-      new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js', Infinity),
-      new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery',
-        'window.jQuery': 'jquery'
-      })
+      new webpack.optimize.OccurenceOrderPlugin()
     ]
   } else {
     plugins = [
@@ -36,12 +30,6 @@ function getPlugins (env) {
       }),
       new webpack.optimize.DedupePlugin(),
       new webpack.optimize.OccurenceOrderPlugin(),
-      new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js', Infinity),
-      new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery',
-        'window.jQuery': 'jquery'
-      }),
       new webpack.optimize.UglifyJsPlugin({
         compress: { warnings: false },
         mangle: true,
