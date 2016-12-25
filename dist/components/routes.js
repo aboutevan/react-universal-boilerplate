@@ -18,6 +18,10 @@ var _IndexPage = require('./page/IndexPage/IndexPage');
 
 var _IndexPage2 = _interopRequireDefault(_IndexPage);
 
+var _AboutPage = require('./page/AboutPage/AboutPage');
+
+var _AboutPage2 = _interopRequireDefault(_AboutPage);
+
 var _NotFoundPage = require('./page/NotFoundPage/NotFoundPage');
 
 var _NotFoundPage2 = _interopRequireDefault(_NotFoundPage);
@@ -28,6 +32,7 @@ var routes = _react2.default.createElement(
   _reactRouter.Route,
   { path: '/', component: _Layout2.default },
   _react2.default.createElement(_reactRouter.IndexRoute, { component: _IndexPage2.default }),
+  _react2.default.createElement(_reactRouter.Route, { path: '/about', component: _AboutPage2.default }),
   _react2.default.createElement(_reactRouter.Route, { path: '*', component: _NotFoundPage2.default })
 );
 

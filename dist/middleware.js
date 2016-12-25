@@ -12,6 +12,10 @@ var _server = require('react-dom/server');
 
 var _reactRouter = require('react-router');
 
+var _meta = require('./core/data/meta.core');
+
+var _meta2 = _interopRequireDefault(_meta);
+
 var _routes = require('./components/routes');
 
 var _routes2 = _interopRequireDefault(_routes);
@@ -36,8 +40,11 @@ exports.default = function (req, res) {
     }
 
     var markup = void 0;
+    var meta = void 0;
     if (renderProps) {
       // if the current route matched then renderProps
+      // meta = getMeta(req.url);
+      meta = (0, _meta2.default)(req.url);
       markup = (0, _server.renderToString)(_react2.default.createElement(_reactRouter.RouterContext, renderProps));
     } else {
       // otherwise render 404
@@ -46,6 +53,6 @@ exports.default = function (req, res) {
     }
 
     // render the index template with the embedded react markup
-    return res.render('index', { markup: markup });
+    return res.render('index', { markup: markup, meta: meta });
   });
 };

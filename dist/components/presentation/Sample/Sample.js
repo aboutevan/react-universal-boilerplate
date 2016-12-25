@@ -10,16 +10,16 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Header = function Header() {
+var Sample = function Sample() {
   return _react2.default.createElement(
     "div",
-    { className: "header" },
+    { className: "sample" },
     _react2.default.createElement(
-      "h3",
+      "h2",
       null,
-      "Im notsss a header"
+      "Im a sample component included on index pppage"
     )
   );
 };
 
-exports.default = Header;
+exports.default = Sample;

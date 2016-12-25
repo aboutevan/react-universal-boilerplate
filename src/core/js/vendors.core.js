@@ -1,38 +1,38 @@
 module.exports = [
-  // 'jquery',
+  'jquery',
 
   // FOUNDATION -------------------------------------------
 
   // -- core (enable for plugins below to work)
-  // 'foundation-sites/dist/plugins/foundation.core',
-  // 'foundation-sites/dist/plugins/foundation.util.mediaQuery',
-  // 'foundation-sites/dist/plugins/foundation.util.box',
-  // 'foundation-sites/dist/plugins/foundation.util.keyboard',
-  // 'foundation-sites/dist/plugins/foundation.util.motion',
-  // 'foundation-sites/dist/plugins/foundation.util.nest',
-  // 'foundation-sites/dist/plugins/foundation.util.timerAndImageLoader',
-  // 'foundation-sites/dist/plugins/foundation.util.touch',
-  // 'foundation-sites/dist/plugins/foundation.util.triggers',
+  'foundation-sites/js/foundation.core',
+  'foundation-sites/js/foundation.util.mediaQuery',
+  'foundation-sites/js/foundation.util.box',
+  'foundation-sites/js/foundation.util.keyboard',
+  'foundation-sites/js/foundation.util.motion',
+  'foundation-sites/js/foundation.util.nest',
+  'foundation-sites/js/foundation.util.timerAndImageLoader',
+  'foundation-sites/js/foundation.util.touch',
+  'foundation-sites/js/foundation.util.triggers',
 
   // // -- plugins
-  // 'foundation-sites/dist/plugins/foundation.accordion.js',
-  // 'foundation-sites/dist/plugins/foundation.accordionMenu.js',
-  // 'foundation-sites/dist/plugins/foundation.drilldown.js',
-  // 'foundation-sites/dist/plugins/foundation.dropdown.js',
-  // 'foundation-sites/dist/plugins/foundation.dropdownMenu.js',
-  // 'foundation-sites/dist/plugins/foundation.equalizer.js',
-  // 'foundation-sites/dist/plugins/foundation.interchange.js',
-  // 'foundation-sites/dist/plugins/foundation.magellan.js',
-  // 'foundation-sites/dist/plugins/foundation.offcanvas.js',
-  // 'foundation-sites/dist/plugins/foundation.orbit.js',
-  // 'foundation-sites/dist/plugins/foundation.responsiveMenu.js',
-  // 'foundation-sites/dist/plugins/foundation.responsiveToggle.js',
-  // 'foundation-sites/dist/plugins/foundation.reveal.js',
-  // 'foundation-sites/dist/plugins/foundation.slider.js',
-  // 'foundation-sites/dist/plugins/foundation.sticky.js',
-  // 'foundation-sites/dist/plugins/foundation.tabs.js',
-  // 'foundation-sites/dist/plugins/foundation.toggler.js',
-  // 'foundation-sites/dist/plugins/foundation.tooltip.js'
+  // 'foundation-sites/js/foundation.accordion.js',
+  // 'foundation-sites/js/foundation.accordionMenu.js',
+  // 'foundation-sites/js/foundation.drilldown.js',
+  // 'foundation-sites/js/foundation.dropdown.js',
+  // 'foundation-sites/js/foundation.dropdownMenu.js',
+  // 'foundation-sites/js/foundation.equalizer.js',
+  // 'foundation-sites/js/foundation.interchange.js',
+  // 'foundation-sites/js/foundation.magellan.js',
+  'foundation-sites/js/foundation.offcanvas.js',
+  // 'foundation-sites/js/foundation.orbit.js',
+  // 'foundation-sites/js/foundation.responsiveMenu.js',
+  // 'foundation-sites/js/foundation.responsiveToggle.js',
+  // 'foundation-sites/js/foundation.reveal.js',
+  // 'foundation-sites/js/foundation.slider.js',
+  // 'foundation-sites/js/foundation.sticky.js',
+  // 'foundation-sites/js/foundation.tabs.js',
+  // 'foundation-sites/js/foundation.toggler.js',
+  'foundation-sites/js/foundation.tooltip.js'
 
   // END FOUNDATION ......................................
 ]

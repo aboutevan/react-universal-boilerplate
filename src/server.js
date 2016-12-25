@@ -10,13 +10,11 @@ import { match, RouterContext } from 'react-router';
 const env = process.env.NODE_ENV || 'development';
 const port = process.env.PORT || 3000;
 
-
-
 // initialize the server
 const app = new express();
 
 // set locals
-app.locals.env = env
+app.locals.env = env;
 
 // configure support for ejs
 app.set('view engine', 'ejs');

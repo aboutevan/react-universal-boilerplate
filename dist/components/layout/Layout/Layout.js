@@ -12,6 +12,10 @@ var _Header = require('../../presentation/Header/Header');
 
 var _Header2 = _interopRequireDefault(_Header);
 
+var _Footer = require('../../presentation/Footer/Footer');
+
+var _Footer2 = _interopRequireDefault(_Footer);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 if (process.env.BROWSER) {
@@ -27,7 +31,8 @@ var Layout = function Layout(props) {
       'div',
       { className: 'layout__content' },
       props.children
-    )
+    ),
+    _react2.default.createElement(_Footer2.default, null)
   );
 };
 

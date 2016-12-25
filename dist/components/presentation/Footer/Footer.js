@@ -10,16 +10,20 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Header = function Header() {
+var Footer = function Footer() {
   return _react2.default.createElement(
     "div",
-    { className: "header" },
+    { className: "footer" },
     _react2.default.createElement(
-      "h3",
+      "div",
       null,
-      "Im notsss a header"
+      _react2.default.createElement(
+        "h3",
+        null,
+        "Im the footer"
+      )
     )
   );
 };
 
-exports.default = Header;
+exports.default = Footer;

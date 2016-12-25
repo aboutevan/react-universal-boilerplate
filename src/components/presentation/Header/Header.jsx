@@ -1,10 +1,12 @@
 import React from 'react';
+import Nav from 'presentation/Nav/Nav';
 
 const Header = () => (
   <div className="header">
-    <h1>
-      Im notsss a header
-    </h1>
+    <Nav />
+    <h3>
+      This is the header
+    </h3>
   </div>
 );
 
