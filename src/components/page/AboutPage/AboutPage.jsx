@@ -9,7 +9,9 @@ const AboutPage = () => (
         { name: 'description', content: 'About page description' },
       ]}
     />
-    <h1>the about page</h1>
+    <div className="about-page__col">
+      <h1>the about page</h1>
+    </div>
   </div>
 );
 

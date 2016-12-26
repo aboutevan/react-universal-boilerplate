@@ -45,9 +45,9 @@
 // 1. Global
 // ---------
 
-$c1: #630B11;
-$c2: #1E1D1C;
-$c3: #000;
+$c1: #3E606F;
+$c2: #FCFFF5;
+$c3: #898989;
 
 $global-font-size: 100%;
 $global-width: rem-calc(1400);
@@ -240,7 +240,7 @@ $breadcrumbs-item-slash: true;
 $button-padding: 0.85em 1em;
 $button-margin: 0 0 $global-margin 0;
 $button-fill: solid;
-$button-background: $primary-color;
+$button-background: $c1;
 $button-background-hover: scale-color($button-background, $lightness: -15%);
 $button-color: $white;
 $button-color-alt: $black;

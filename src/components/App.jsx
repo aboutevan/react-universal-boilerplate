@@ -3,7 +3,7 @@ import ReactGA from 'react-ga';
 import { Router, browserHistory } from 'react-router';
 import routes from './routes';
 
-ReactGA.initialize('UA-xxxxx-xx');
+ReactGA.initialize('UA-XXXXXX-XX');
 
 const logPageView = () => {
   ReactGA.set({ page: window.location.pathname });

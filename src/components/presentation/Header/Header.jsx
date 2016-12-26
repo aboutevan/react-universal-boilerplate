@@ -4,9 +4,7 @@ import Nav from 'presentation/Nav/Nav';
 const Header = () => (
   <div className="header">
     <Nav />
-    <h3>
-      This is the header
-    </h3>
+    <img className="header__logo" src="img/react-logo.png" role="presentation" />
   </div>
 );
 

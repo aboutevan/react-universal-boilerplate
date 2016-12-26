@@ -8,12 +8,15 @@ import Helmet from 'react-helmet';
 const IndexPage = () => (
   <div className="index-page">
     <Helmet
-      title="My Title"
+      title="My title"
       meta={[
         { name: 'description', content: 'Index Page description' },
       ]}
     />
-    <Sample />
+
+    <div className="index-page__col">
+      <Sample />
+    </div>
   </div>
 );
 
