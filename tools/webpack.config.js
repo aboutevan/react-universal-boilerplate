@@ -13,7 +13,10 @@ const config = {
 	output: settings.output(env),
 
 	resolve: {
-		extensions: ['', '.js', '.jsx']
+		extensions: ['', '.js', '.jsx'],
+    alias: {
+      modernizr$: path.resolve(__dirname, '../.modernizrrc')
+    }
 	},
 
 	plugins: settings.plugins(env),

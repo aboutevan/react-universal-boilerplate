@@ -49,6 +49,7 @@ if (env !== 'production') {
       port: 3001,
       weinre: { port: 3333 },
     },
+    open: false
   });
 }
 

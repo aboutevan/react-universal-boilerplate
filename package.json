@@ -4,10 +4,9 @@
   "description": "A universal React app",
   "main": "index.js",
   "scripts": {
-    "start": "npm run modernizr && webpack --config ./tools/webpack.config.js && nodemon src/server.js --exec babel-node",
-    "build": "npm run modernizr && NODE_ENV=production webpack -p --config ./tools/webpack.config.js && NODE_ENV=production babel src -d dist",
-    "production": "rm -rf dist && npm run build && NODE_ENV=production node dist/server.js",
-    "modernizr": "modernizr -c modernizr.config.json -d ./src/static/js -u"
+    "start": "webpack --config ./tools/webpack.config.js && nodemon src/server.js --exec babel-node",
+    "build": "NODE_ENV=production webpack -p --config ./tools/webpack.config.js && NODE_ENV=production babel src -d dist",
+    "production": "rm -rf dist && npm run build && NODE_ENV=production node dist/server.js"
   },
   "author": "Evan Salzbrenner",
   "license": "MIT",
@@ -46,7 +45,9 @@
     "eslint-plugin-react": "^6.4.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "gsap": "^1.19.0",
+    "json-loader": "^0.5.4",
     "modernizr": "^3.3.1",
+    "modernizr-loader": "^1.0.0",
     "node-sass": "^3.10.1",
     "nodemon": "^1.11.0",
     "postcss-loader": "^1.0.0",

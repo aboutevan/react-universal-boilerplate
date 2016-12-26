@@ -20,6 +20,14 @@ function getLoaders (env) {
       {
         test: /\.json$/,
         loader: 'json'
+      },
+      {
+        test: /\.modernizrrc.js$/,
+        loader: "modernizr"
+      },
+      {
+        test: /\.modernizrrc(\.json)?$/,
+        loader: "modernizr!json"
       }
     ]
   } else {
@@ -37,6 +45,14 @@ function getLoaders (env) {
       {
         test: /\.json$/,
         loader: 'json'
+      },
+      {
+        test: /\.modernizrrc.js$/,
+        loader: "modernizr"
+      },
+      {
+        test: /\.modernizrrc(\.json)?$/,
+        loader: "modernizr!json"
       }
     ]
   }
