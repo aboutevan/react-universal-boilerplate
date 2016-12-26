@@ -1,7 +1,7 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
-import getMeta from './data/meta.data';
+import Helmet from 'react-helmet';
 import routes from './components/routes';
 import NotFoundPage from './components/page/NotFoundPage/NotFoundPage';
 
@@ -21,26 +21,32 @@ export default (req, res) => {
       }
 
       let markup;
-      let meta;
       if (renderProps) {
         // if the current route matched then renderProps
         const returnedComponent = renderProps.routes[1].component.name
         markup = renderToString(<RouterContext {...renderProps} />);
-        if (returnedComponent !== 'NotFoundPage') {
-          meta = getMeta(req.url);
-        } else {
-          meta = getMeta('/404');
+        if (returnedComponent === 'NotFoundPage') {
           res.status(404);
         }
-      } else {
-        // otherwise render 404 - this doesn't actually fire
-        // meta = getMeta('/four');
-        markup = renderToString(<NotFoundPage />);
-        res.status(404);
       }
+      // Never matches as there is always renderProps
+      // else {
+      //   markup = renderToString(<NotFoundPage />);
+      //   res.status(404);
+      // }
+
+      // reset Helmet meta to avoid memory leaks
+      let head = Helmet.rewind();
+      head.htmlAttributes
+      head.title
+      head.base
+      head.meta
+      head.link
+      head.script
+      head.style
 
       // render the index template with the embedded react markup
-      return res.render('index', { markup, meta })
+      return res.render('index', { markup, head })
     }
   );
 }
