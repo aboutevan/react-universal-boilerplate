@@ -8,7 +8,7 @@ import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
 
 const env = process.env.NODE_ENV || 'development';
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 9000;
 
 // initialize the server
 const app = new express();
@@ -39,5 +39,17 @@ app.listen(port, err => {
 	}
 	console.info(`Server running on http://localhost:${port} [${env}]`)
 })
+
+if (env !== 'production') {
+  const browserSync = require('browser-sync');
+  browserSync.init({
+    proxy: `localhost:${port}`,
+    port: 3000,
+    ui: {
+      port: 3001,
+      weinre: { port: 3333 },
+    },
+  });
+}
 
 export default app;

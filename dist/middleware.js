@@ -12,9 +12,9 @@ var _server = require('react-dom/server');
 
 var _reactRouter = require('react-router');
 
-var _meta = require('./core/data/meta.core');
+var _reactHelmet = require('react-helmet');
 
-var _meta2 = _interopRequireDefault(_meta);
+var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 
 var _routes = require('./components/routes');
 
@@ -40,19 +40,31 @@ exports.default = function (req, res) {
     }
 
     var markup = void 0;
-    var meta = void 0;
     if (renderProps) {
       // if the current route matched then renderProps
-      // meta = getMeta(req.url);
-      meta = (0, _meta2.default)(req.url);
+      var returnedComponent = renderProps.routes[1].component.name;
       markup = (0, _server.renderToString)(_react2.default.createElement(_reactRouter.RouterContext, renderProps));
-    } else {
-      // otherwise render 404
-      markup = (0, _server.renderToString)(_react2.default.createElement(_NotFoundPage2.default, null));
-      res.status(404);
+      if (returnedComponent === 'NotFoundPage') {
+        res.status(404);
+      }
     }
+    // Never matches as there is always renderProps
+    // else {
+    //   markup = renderToString(<NotFoundPage />);
+    //   res.status(404);
+    // }
+
+    // reset Helmet meta to avoid memory leaks
+    var head = _reactHelmet2.default.rewind();
+    head.htmlAttributes;
+    head.title;
+    head.base;
+    head.meta;
+    head.link;
+    head.script;
+    head.style;
 
     // render the index template with the embedded react markup
-    return res.render('index', { markup: markup, meta: meta });
+    return res.render('index', { markup: markup, head: head });
   });
 };
