@@ -10,7 +10,8 @@ const AboutPage = () => (
       ]}
     />
     <div className="about-page__col">
-      <h1>the about page</h1>
+      <h2>Another Page</h2>
+      <p>This page has differenct content.</p>
     </div>
   </div>
 );

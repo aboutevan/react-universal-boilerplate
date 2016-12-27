@@ -8,6 +8,7 @@ function runHMR (app, env) {
   const webpackHotMiddleware = require('webpack-hot-middleware');
   const compiler = webpack(config);
   const middleware = webpackMiddleware(compiler, {
+    noInfo: true,
     publicPath: config.output.publicPath
   });
   app.use(middleware);

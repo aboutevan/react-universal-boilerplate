@@ -15,6 +15,7 @@ const IndexPage = () => (
     />
 
     <div className="index-page__col">
+      <h2>Universal React App</h2>
       <Sample />
     </div>
   </div>

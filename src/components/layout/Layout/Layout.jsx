@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from 'presentation/Header/Header';
 import Footer from 'presentation/Footer/Footer';
+import Nav from 'presentation/Nav/Nav';
 
 if (process.env.BROWSER) {
   require('./Layout.sass');
@@ -8,6 +9,7 @@ if (process.env.BROWSER) {
 
 const Layout = props => (
   <div className="layout">
+    <Nav />
     <Header />
     <div className="layout__content">{props.children}</div>
     <Footer />

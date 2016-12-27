@@ -18,10 +18,8 @@ class Sample extends Component {
   render() {
     return (
       <div className="sample">
-        <div className="sample__counter-container">
-          <h2>{this.state.counter}</h2>
-        </div>
-        <p>Greetings, I am a <code>Sample</code> component.</p>
+        <p>Greetings, I am a <code>Sample</code> counter component.</p>
+        <h2>{this.state.counter}</h2>
         <button className="button" onClick={this.increment}>Increment</button>
         <button className="button" onClick={this.decrement}>Decrement</button>
       </div>

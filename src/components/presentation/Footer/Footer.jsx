@@ -3,7 +3,11 @@ import React from 'react';
 const Footer = () => (
   <div className="footer">
     <div>
-      <h3>Im the footer</h3>
+      <p className="footer__colophon">Built by
+        <a href="//aboutevan.com" target="_blank" rel="noopener noreferrer"> Evan</a>.
+        Contribute on
+        <a href="//aboutevan.com" target="_blank" rel="noopener noreferrer"> Github</a>
+      </p>
     </div>
   </div>
 );
