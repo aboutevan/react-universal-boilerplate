@@ -17,9 +17,8 @@ const sitemap = createSitemap({
   hostname: 'http://example.com',
   cacheTime: 600000,
   urls: [
-    {url: '/', changefreq: 'weekly', priority: 0.3},
-    {url: '/about', changefreq: 'weekly', priority: 0.3},
-    {url: '/404', changefreq: 'weekly', priority: 0.3}
+    // {url: '/', changefreq: 'weekly', priority: 0.3},
+    // {url: '/about', changefreq: 'weekly', priority: 0.3}
   ]
 })
 
