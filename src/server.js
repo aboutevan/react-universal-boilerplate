@@ -2,6 +2,7 @@ import path from 'path';
 import compression from 'compression';
 import express from 'express';
 import middleware from './middleware';
+import { createSitemap } from 'sitemap';
 
 import React from 'react';
 import { renderToString } from 'react-dom/server';
@@ -12,6 +13,15 @@ const port = process.env.PORT || 9000;
 
 // initialize the server
 const app = new express();
+const sitemap = createSitemap({
+  hostname: 'http://example.com',
+  cacheTime: 600000,
+  urls: [
+    {url: '/', changefreq: 'weekly', priority: 0.3},
+    {url: '/about', changefreq: 'weekly', priority: 0.3},
+    {url: '/404', changefreq: 'weekly', priority: 0.3}
+  ]
+})
 
 // set locals
 app.locals.env = env;
@@ -27,12 +37,21 @@ if (env !== 'production') {
 app.use(compression())
 app.use(express.static(path.join(__dirname, 'static')));
 
-// universal routing and rendering
+// sitemap
+app.get('/sitemap.xml', (req, res) => {
+  sitemap.toXML((err, xml) => {
+    if (err) {
+      return res.status(500).end();
+    }
+    res.header('Content-Type', 'application/xml');
+    res.send(xml);
+  });
+});
 
+// universal routing and rendering
 app.get('*', middleware);
 
 // start the server
-
 app.listen(port, err => {
 	if(err) {
 		return console.error(err);
@@ -40,6 +59,7 @@ app.listen(port, err => {
 	console.info(`Server running on http://localhost:${port} [${env}]`)
 })
 
+// proxy server to BrowserSync
 if (env !== 'production') {
   const browserSync = require('browser-sync');
   browserSync.init({
