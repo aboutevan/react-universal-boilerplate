@@ -7,7 +7,7 @@
     "start": "webpack --config ./tools/webpack.config.js && nodemon --ignore src/ src/server.js --exec babel-node",
     "build": "NODE_ENV=production webpack -p --config ./tools/webpack.config.js && NODE_ENV=production babel src -d dist",
     "production": "rm -rf dist && npm run build && NODE_ENV=production node dist/server.js",
-    "deploy": "npm run build && git checkout -b deploy && sed -i.bak 's/#dist/dist/g' .gitignore && rm .gitignore.bak && git add . && git commit -m 'deploy' && git push heroku deploy:master && git checkout -- . && git checkout master && git branch -D deploy"
+    "deploy": "npm run build && git checkout -b deploy && sed -i.bak 's/#dist/dist/g' .gitignore && rm .gitignore.bak && git add . && git commit -m 'deploy' && git push -f heroku deploy:master && git checkout -- . && git checkout master && git branch -D deploy"
   },
   "author": "Evan Salzbrenner",
   "license": "MIT",
