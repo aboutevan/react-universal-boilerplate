@@ -1,9 +1,6 @@
 import React from 'react';
-import Sample from 'presentation/Sample/Sample';
+import Counter from 'presentation/Counter/Counter';
 import Helmet from 'react-helmet';
-// import Modernizr from 'modernizr';
-
-// console.log(Modernizr);
 
 const IndexPage = () => (
   <div className="index-page">
@@ -16,7 +13,7 @@ const IndexPage = () => (
 
     <div className="index-page__col">
       <h2>Universal React App</h2>
-      <Sample />
+      <Counter />
     </div>
   </div>
 );

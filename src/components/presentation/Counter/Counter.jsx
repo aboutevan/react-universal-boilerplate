@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Sample extends Component {
+class Counter extends Component {
   constructor() {
     super();
     this.state = {
@@ -17,14 +17,14 @@ class Sample extends Component {
   }
   render() {
     return (
-      <div className="sample">
-        <p>Greetings, I am a <code>Sample</code> counter component.</p>
+      <div className="Counter">
+        <p>Greetings, I am a <code>Counter</code> component.</p>
         <h2>{this.state.counter}</h2>
-        <button className="button" onClick={this.increment}>Increment</button>
-        <button className="button" onClick={this.decrement}>Decrement</button>
+        <button className="button Counter__decrement" onClick={this.decrement}>Decrement</button>
+        <button className="button Counter__increment" onClick={this.increment}>Increment</button>
       </div>
     );
   }
 }
 
-export default Sample;
+export default Counter;

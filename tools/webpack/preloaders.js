@@ -2,29 +2,18 @@
 const webpack = require('webpack');
 const path = require('path');
 
-function getPreloaders (env) {
-  let preloaders
+module.exports = function (env) {
+
+  const preloaders = [];
+
   if(env === 'development') {
-    preloaders = [
-      {
-        test: /\.jsx?$/,
-        loaders: ['eslint-loader'],
-        include: path.join(__dirname, '../../src'),
-        exclude: path.join(__dirname, '../../src', 'data')
-      }
-    ]
-  } else {
-    preloaders = [
-      {
-        test: /\.jsx?$/,
-        loaders: ['eslint-loader'],
-        include: path.join(__dirname, '../../dist'),
-        exclude: path.join(__dirname, '../../dist', 'data')
-      }
-    ]
+    preloaders.push({
+      test: /\.jsx?$/,
+      loaders: ['eslint-loader'],
+      include: path.join(__dirname, '../../src'),
+      exclude: path.join(__dirname, '../../src', 'data')
+    })
   }
 
-  return preloaders
+  return preloaders;
 }
-
-module.exports = getPreloaders

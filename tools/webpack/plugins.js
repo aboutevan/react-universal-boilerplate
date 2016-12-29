@@ -4,32 +4,24 @@ const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+module.exports = function (env) {
 
-function getPlugins (env) {
-  let plugins
-  if(env === 'development') {
-    plugins = [
-      new webpack.HotModuleReplacementPlugin(),
-      new webpack.NoErrorsPlugin(),
-      new webpack.DefinePlugin({
-        'process.env': {
-          NODE_ENV: JSON.stringify('development'),
-          BROWSER: true
-        }
-      }),
-      new webpack.optimize.OccurenceOrderPlugin()
-    ]
+  const plugins = [
+    new webpack.NoErrorsPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify(env),
+        BROWSER: true
+      }
+    }),
+    new webpack.optimize.OccurenceOrderPlugin()
+  ];
+
+  if (env === 'development') {
+    plugins.push(new webpack.HotModuleReplacementPlugin());
   } else {
-    plugins = [
-      new webpack.NoErrorsPlugin(),
-      new webpack.DefinePlugin({
-        'process.env': {
-          NODE_ENV: JSON.stringify('production'),
-          BROWSER: JSON.stringify(true)
-        }
-      }),
+    plugins.push(
       new webpack.optimize.DedupePlugin(),
-      new webpack.optimize.OccurenceOrderPlugin(),
       new webpack.optimize.UglifyJsPlugin({
         compress: { warnings: false },
         mangle: true,
@@ -51,10 +43,7 @@ function getPlugins (env) {
         }
       ]),
       new ExtractTextPlugin('../css/bundle.css')
-    ]
+    );
   }
-
-  return plugins
+  return plugins;
 }
-
-module.exports = getPlugins

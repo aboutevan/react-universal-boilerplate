@@ -1,20 +1,16 @@
 'use strict';
-
 const path = require('path');
 
-function getEntry (env) {
-  let entry
+module.exports = function (env) {
+  const entry = {
+    app: [path.join(__dirname, '../../src', 'init.jsx')]
+  };
+
   if(env === 'development') {
-    entry = {
-      app: ['webpack-hot-middleware/client', path.join(__dirname, '../../src', 'init.jsx')]
-    }
+    entry.app.unshift('webpack-hot-middleware/client')
   } else {
-    entry = {
-      app: path.join(__dirname, '../../src', 'init.jsx')
-    }
+    // any production settings
   }
 
-  return entry
+  return entry;
 }
-
-module.exports = getEntry
