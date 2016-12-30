@@ -30,12 +30,9 @@ module.exports = function (env) {
       }),
       new CopyWebpackPlugin([
         {
-          from: path.join(__dirname, '../../src', 'static', 'css'),
-          to: path.join(__dirname, '../../dist', 'static', 'css')
-        },
-        {
-          from: path.join(__dirname, '../../src', 'static', 'img'),
-          to: path.join(__dirname, '../../dist', 'static', 'img')
+          from: path.join(__dirname, '../../src', 'static'),
+          to: path.join(__dirname, '../../dist', 'static'),
+          ignore: ['js/bundle.js']
         },
         {
           from: path.join(__dirname, '../../src', 'index.ejs'),
