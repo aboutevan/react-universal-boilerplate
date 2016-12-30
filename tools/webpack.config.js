@@ -27,11 +27,11 @@ const config = {
 		postLoaders: settings.postloaders(env)
 	},
 
-	postcss: function () {
-		return [
-			require('autoprefixer')
-		]
-	},
+	// postcss: function () {
+	// 	return [
+	// 		require('autoprefixer')
+	// 	]
+	// },
 
 	eslint: {
 		configFile: path.join(__dirname, '../.eslintrc'),

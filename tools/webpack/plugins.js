@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+// const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = function (env) {
 
@@ -18,7 +19,15 @@ module.exports = function (env) {
   ];
 
   if (env === 'development') {
-    plugins.push(new webpack.HotModuleReplacementPlugin());
+    plugins.push(
+      new webpack.HotModuleReplacementPlugin()
+      // new StyleLintPlugin({
+      //   configFile: '.stylelintrc',
+      //   files: ['**/*.sass'],
+      //   syntax: 'sugarss',
+      //   failOnError: false,
+      // })
+    );
   } else {
     plugins.push(
       new webpack.optimize.DedupePlugin(),

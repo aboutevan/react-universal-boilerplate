@@ -29,7 +29,7 @@ module.exports = function (env) {
   if(env === 'development') {
     loaders.push({
       test: /\.(scss|sass)$/,
-      loader: 'style!css?sourceMap!sass?sourceMap!postcss',
+      loader: 'style!css?sourceMap!postcss-loader!sass?sourceMap',
       include: path.join(__dirname, '../../src')
     });
   } else {

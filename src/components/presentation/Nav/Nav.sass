@@ -1,17 +1,17 @@
 .nav
-  +grid-row
+  @include grid-row
   background: $c1
 
   &__inner
-    +grid-col(12)
+    @include grid-col(12)
     display: flex
-    justify-content: flex-end
     height: rem-calc(40)
+    justify-content: flex-end
 
   ul
     margin: 0
-    align-self: center
     list-style: none
+    align-self: center
 
   li
     display: inline-block
