@@ -1,8 +1,10 @@
 .nav
-  @include grid-row
   background: $c1
 
-  &__inner
+  &__row
+    @include grid-row
+
+  &__col
     @include grid-col(12)
     display: flex
     height: rem-calc(40)
