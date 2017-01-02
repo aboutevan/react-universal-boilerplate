@@ -5,14 +5,15 @@ module.exports = function (env) {
 
   const output = {
     filename: 'bundle.js',
-    publicPath: '/static/js/'
+    publicPath: '/'
   };
 
   // check env
   if(env === 'development') {
-    output.path = path.join(__dirname, '../../src', 'static', 'js');
+    output.path = path.join(__dirname, '../../src', 'static', 'compiled');
   } else {
-    output.path = path.join(__dirname, '../../dist', 'static', 'js');
+    output.publicPath = '/static/compiled',
+    output.path = path.join(__dirname, '../../dist', 'static', 'compiled');
   }
 
   return output;

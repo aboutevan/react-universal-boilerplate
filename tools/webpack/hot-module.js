@@ -1,7 +1,7 @@
 'use strict';
 const path = require('path');
 
-module.exports = function (app, env) {
+module.exports = function (app) {
 
   const config = require('../webpack.config.js');
   const webpack = require('webpack');

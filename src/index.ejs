@@ -7,12 +7,20 @@
     <%- head.title.toString() -%>
     <%- head.meta.toString() -%>
     <% if (env === 'production') { %>
-			<link rel="stylesheet" type="text/css" href="/css/bundle.css">
+			<link rel="stylesheet" type="text/css" href="/bundle.css">
     <% } %>
     <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
   </head>
   <body>
     <div id="main"><%- markup -%></div>
-    <script src="/js/bundle.js"></script>
+
+    <%/*
+      This path is sourced differently depending on env - 
+      on development is coming from middleware memory, on
+      production it is actually referring to the static file in
+      static/compiled directory 
+    */%>
+    <script src="/bundle.js"></script>
+  
   </body>
 </html>

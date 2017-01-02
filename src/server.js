@@ -31,9 +31,14 @@ app.set('views', path.join(__dirname));
 
 if (env !== 'production') {
   require('../tools/webpack/hot-module')(app, env);
+  // get static assets
+  app.use(express.static(path.join(__dirname, 'static', 'assets')));
+} else {
+  // get static assets and get compiled webpack paths
+  app.use(express.static(path.join(__dirname, 'static', 'assets')));
+  app.use(express.static(path.join(__dirname, 'static', 'compiled')));
 }
 app.use(compression())
-app.use(express.static(path.join(__dirname, 'static')));
 
 // sitemap
 app.get('/sitemap.xml', (req, res) => {
