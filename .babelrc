@@ -10,6 +10,7 @@
         "data": "./src/data",
         "routes": "./src/routes",
         "image": "./src/static/img",
+        "utils": "./src/core/js/utils",
         "TweenLite": "./node_modules/gsap/src/uncompressed/TweenLite.js",
         "TweenMax": "./node_modules/gsap/src/uncompressed/TweenMax.js",
         "TimelineLite": "./node_modules/gsap/src/uncompressed/TimelineLite.js",
