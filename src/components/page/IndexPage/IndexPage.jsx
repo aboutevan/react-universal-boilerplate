@@ -2,6 +2,8 @@ import React from 'react';
 import Counter from 'presentation/Counter/Counter';
 import Helmet from 'react-helmet';
 import MainLayout from 'layout/MainLayout/MainLayout';
+import HeroCanvas
+ from 'presentation/HeroCanvas/HeroCanvas';
 
 const IndexPage = () => (
   <MainLayout>
@@ -11,6 +13,7 @@ const IndexPage = () => (
         { name: 'description', content: 'Index Page description' },
       ]}
     />
+    <HeroCanvas />
     <div className="index-page">
       <div className="index-page__col">
         <h2>Universal React App</h2>

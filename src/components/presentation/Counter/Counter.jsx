@@ -8,7 +8,6 @@ class Counter extends Component {
     };
     this.increment = this.increment.bind(this);
     this.decrement = this.decrement.bind(this);
-    // help();
   }
   increment() {
     this.setState({ counter: this.state.counter + 1 });
