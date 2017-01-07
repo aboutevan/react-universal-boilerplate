@@ -23,17 +23,13 @@ export default (req, res) => {
       let markup;
       if (renderProps) {
         // if the current route matched then renderProps
-        const returnedComponent = renderProps.routes[1].component.name
+        const returnedPage = renderProps.routes[1].component.name
         markup = renderToString(<RouterContext {...renderProps} />);
-        if (returnedComponent === 'NotFoundPage') {
+        // 404
+        if (returnedPage === 'NotFoundPage') {
           res.status(404);
         }
       }
-      // Never matches as there is always renderProps
-      // else {
-      //   markup = renderToString(<NotFoundPage />);
-      //   res.status(404);
-      // }
 
       // reset Helmet meta to avoid memory leaks
       let head = Helmet.rewind();
