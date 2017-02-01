@@ -2,7 +2,7 @@
 
 >### !!! This is a living project and will often change !!!
 
-Single Page React App with Server Side Rendering, with a bunch of added features.
+Single Page React App with Server Side Rendering, with a bunch of added features. [View example app](http://react-app.aboutevan.com).
 
 ##Quick Start
 
